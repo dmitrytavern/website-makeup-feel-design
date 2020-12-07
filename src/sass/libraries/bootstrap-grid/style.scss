@@ -1,0 +1,31 @@
+/*!
+* Bootstrap Grid v4.0.0 (https://getbootstrap.com)
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+*/
+
+
+
+// Import grid function
+
+@import "mixins/breakpoints";           // MIXINS: Init functions for make grid
+@import "mixins/grid-framework";        // MIXINS: Init mixins for make grid
+@import "mixins/grid";                  // MIXINS: Make container and column
+
+
+
+// Init grid system
+
+@import "grid/grid";                    // Use mixins for create grid classes
+@import "grid/grid-flex";               // example: justify-content-xx-center;
+
+
+
+// Initialization debug errors
+
+@import "functions";                    // Need for init classes
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+@include _assert-ascending($container-max-widths, "$container-max-widths");

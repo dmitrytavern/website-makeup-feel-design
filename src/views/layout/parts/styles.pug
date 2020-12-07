@@ -1,0 +1,19 @@
+
+if mode === 'production'
+
+     each file in htmlWebpackPlugin.files.css
+       if process.env.BUILD_REQUIRED_MIN_CSS === 'true'
+           if file.search('.min') > -1
+               link(href=file rel="preload" as="style")
+       else
+           if file.search('.min') <= -1
+               link(href=file rel="preload" as="style")
+
+
+     each file in htmlWebpackPlugin.files.css
+         if process.env.BUILD_REQUIRED_MIN_CSS === 'true'
+             if file.search('.min') > -1
+                 link(href=file rel="stylesheet")
+         else
+             if file.search('.min') <= -1
+                 link(href=file rel="stylesheet")

@@ -1,0 +1,80 @@
+@mixin grid-col($breakpoint, $sizes: 'all',  $offsets: [], $columns: $grid-columns, $prefix: '') {
+  $infix: $prefix + breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @if $sizes == 'all' {
+
+    // Add default parameters
+    .col#{$infix} {
+      @extend %grid-column;
+    }
+
+    @for $size from 1 through $columns {
+      .col#{$infix}-#{$size} {
+        @extend %grid-column;
+      }
+    }
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+
+      // Default column settings
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      // Make column
+      @for $size from 1 through $columns{
+        .col#{$infix}-#{$size} {
+          @include make-col($size, $columns)
+        }
+      }
+
+      // Make offsets
+      @if $grid-offset {
+        @for $offset from 1 through $columns {
+          .offset#{$infix}-#{$offset} {
+            @include make-col-offset($offset, $columns);
+          }
+        }
+      }
+    }
+
+  } @else {
+    // Add default parameters
+    .col#{$infix} {
+      @extend %grid-column;
+    }
+
+    @each $size in $sizes {
+      .col#{$infix}-#{$size} {
+        @extend %grid-column;
+      }
+    }
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+
+      // Default column settings
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      // Make column
+      @each $size in $sizes {
+        .col#{$infix}-#{$size} {
+          @include make-col($size, $columns)
+        }
+      }
+
+      // Make offsets
+      @each $offset in $offsets {
+        .offset#{$infix}-#{$offset} {
+          @include make-col-offset($offset, $columns);
+        }
+      }
+    }
+  }
+
+}

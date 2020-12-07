@@ -1,0 +1,73 @@
+// Media queries
+// -------------
+// # Default and portrait
+// @media only screen and (max-width: 360px) for 320, 360
+// @media only screen and (max-width: 576px) for 375, 414, 480, 578
+// @media only screen and (max-width: 767px) for 576, 600, 767
+// @media only screen and (max-width: 1023px) for 768, 992, 1023
+// @media only screen and (max-width: 1439px) for 1024, 1366, 1439
+// @media only screen and (max-width: 1920px) for 1600, 1920
+// @media only screen and (min-width: 1921px) for 1921 and more
+// # Landscape
+// @media only screen and (max-width: 480px) and (orientation: landscape) for mobile in landscape version 480x320
+// @media only screen and (max-width: 768px) and (orientation: landscape)
+
+
+
+// Mobile
+
+@mixin media-xs()
+  @media only screen and (max-width: $grid-breakpoint-xs)
+    @content
+
+@mixin media-xs-landscape()
+  @media only screen and (max-width: $grid-breakpoint-xs) and (orientation: landscape)
+    @content
+
+
+
+// Max
+
+@mixin media-sm-max()
+  @media only screen and (max-width: $grid-breakpoint-sm - 1px)
+    @content
+
+@mixin media-md-max()
+  @media only screen and (max-width: $grid-breakpoint-md - 1px)
+    @content
+
+@mixin media-lg-max()
+  @media only screen and (max-width: $grid-breakpoint-lg - 1px)
+    @content
+
+@mixin media-xl-max()
+  @media only screen and (max-width: $grid-breakpoint-xl - 1px)
+    @content
+
+@mixin media-xx-max()
+  @media only screen and (max-width: $grid-breakpoint-xx - 1px)
+    @content
+
+
+
+// Min
+
+@mixin media-sm-min()
+  @media only screen and (min-width: $grid-breakpoint-sm)
+    @content
+
+@mixin media-md-min()
+  @media only screen and (min-width: $grid-breakpoint-md)
+    @content
+
+@mixin media-lg-min()
+  @media only screen and (min-width: $grid-breakpoint-lg)
+    @content
+
+@mixin media-xl-min()
+  @media only screen and (min-width: $grid-breakpoint-xl)
+    @content
+
+@mixin media-xx-min()
+  @media only screen and (min-width: $grid-breakpoint-xx)
+    @content

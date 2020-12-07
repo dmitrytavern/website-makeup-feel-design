@@ -1,0 +1,36 @@
+
+script( src=require('../../../js/vendor/jquery.min.js') )
+script( src=require('../../../js/vendor/jquery.paroller.min') )
+script( src=require('../../../js/vendor/bootstrap.min') )
+script( src=require('../../../js/vendor/swiper-bundle.min') )
+
+
+each file in htmlWebpackPlugin.files.js
+
+	if mode === 'development'
+		script(src=file)
+
+	else
+
+		if process.env.BUILD_REQUIRED_MIN_JS === 'true'
+			if file.match(/.min.js/)
+				script(src=file)
+		else
+			if !file.match(/.min.js/) || file.match(/.vendor.min.js/)
+				script(src=file)
+
+
+if scriptPageExists()
+	-
+		function requireScript(r) {
+			const keys = r.keys()
+			const name = filename + '.js'
+			console.log(keys, name)
+			for (let key of keys) {
+				if (key.search(name) > -1) {
+					return r(key)
+				}
+			}
+		}
+
+	script( src=requireScript(require.context('../../../js/', true, /pages\/.*js/)) )

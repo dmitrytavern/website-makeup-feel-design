@@ -1,0 +1,59 @@
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-behance-simple:before {
+  content: "\e902";
+  color: #000;
+}
+.icon-facebook-simple:before {
+  content: "\e907";
+}
+.icon-arrow-right:before {
+  content: "\e900";
+}
+.icon-behance:before {
+  content: "\e901";
+}
+.icon-download:before {
+  content: "\e904";
+}
+.icon-explamation:before {
+  content: "\e905";
+  color: #f44;
+}
+.icon-facebook:before {
+  content: "\e906";
+}
+.icon-instagram .path1:before {
+  content: "\e908";
+  color: rgb(0, 0, 0);
+}
+.icon-instagram .path2:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(20, 20, 20);
+}
+.icon-instagram-simple:before {
+  content: "\e90a";
+}
+.icon-plus:before {
+  content: "\e90b";
+}
+.icon-telegram:before {
+  content: "\e90d";
+}
+.icon-close:before {
+  content: "\e90c";
+}

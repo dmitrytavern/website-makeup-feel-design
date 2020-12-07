@@ -1,0 +1,31 @@
+@use "sass:map"
+
+@if $indents-available
+
+	@if $indents-margin-available
+		@each $_key, $_value in map.get($indents, "margin")
+			.mt-#{$_key}
+				margin-top: $_value
+
+			.mb-#{$_key}
+				margin-bottom: $_value
+
+			.ml-#{$_key}
+				margin-left: $_value
+
+			.mr-#{$_key}
+				margin-right: $_value
+
+	@if $indents-padding-available
+		@each $_key, $_value in map.get($indents, "padding")
+			.pt-#{$_key}
+				margin-top: $_value
+
+			.pb-#{$_key}
+				margin-bottom: $_value
+
+			.pl-#{$_key}
+				margin-left: $_value
+
+			.pr-#{$_key}
+				margin-right: $_value

@@ -1,0 +1,14 @@
+.fade
+  transition: opacity .3s
+
+  &:not(.show)
+    opacity: 0
+
+.collapse
+  &:not(.show)
+    display: none
+
+.collapsing
+  transition: height .3s
+  height: 0
+  overflow: hidden

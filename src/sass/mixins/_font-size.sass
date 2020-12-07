@@ -1,0 +1,9 @@
+@mixin make-font-size($sizeMin, $sizeMax, $widthMin: 480, $widthMax: 1600)
+  $num: calc(#{$sizeMin+px} + #{$sizeMax - $sizeMin} * ((100vw - #{$widthMin+px}) / (#{$widthMax} - #{$widthMin})))
+  font-size: $num
+
+  @media only screen and (min-width: #{$widthMax + px})
+    font-size: $sizeMax + px
+
+  @media only screen and (max-width: #{$widthMin + px})
+    font-size: $sizeMin + px
