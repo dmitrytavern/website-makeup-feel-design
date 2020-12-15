@@ -1,2 +1,44 @@
-footer
-  width: 100%
+.footer
+  background: #ffffff
+
+  &__inner
+    padding-top: 45px
+    padding-bottom: 30px
+
+  &__nav
+    &-row
+      align-items: center
+      padding: 20px 0
+      border-top: 2px solid
+      border-bottom: 2px solid
+
+    ul
+      display: flex
+      align-items: center
+      justify-content: center
+
+    li
+      @include un-margin-horizontal
+
+      display: block
+      line-height: 14px
+      margin: 0 60px
+
+      &:hover a
+        text-decoration: underline
+
+      &.is-active a
+        text-decoration: underline
+        font-weight: 500
+
+
+    a
+      transition: font-weight .3s
+      font-family: 'Gotham Pro', sans-serif
+      font-size: 14px
+      display: block
+      text-transform: uppercase
+      color: #141414
+
+  &__social-media
+    text-align: right

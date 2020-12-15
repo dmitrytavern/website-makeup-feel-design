@@ -1,2 +1,14 @@
-mixin header()
-	header
+mixin header(string)
+    header.header( class=string )
+        .container
+            .header__inner
+                .header__logo.logo
+                    svg.logo__icon
+                        use( xlink:href=sprite('logo') )
+
+                .header__menu#header-menu-btn
+                    span
+                    span
+
+
+    .menu

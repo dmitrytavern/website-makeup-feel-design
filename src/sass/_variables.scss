@@ -26,7 +26,7 @@ $grid-breakpoint-xx: 1921px; // xx - >=1921px  - 4k, large screen
 
 $grid-columns: 12;
 $grid-gutter: 30px;
-$grid-gutter-container: 20px;
+$grid-gutter-container: 40px;
 $grid-offset: false;
 
 $container-gutter-widths: (
@@ -49,9 +49,9 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 576px,
   md: 768px,
-  lg: 1024px,
-  xl: 1600px,
-  xx: 1921px
+  lg: 1100px,
+  xl: 1570px,
+  xx: 2519px
 );
 
 

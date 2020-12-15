@@ -1,2 +1,36 @@
 mixin footer()
-	footer
+    footer.footer
+        .container
+            .footer__inner
+
+                .row.footer__row.footer__nav-row.no-gutters
+                    .col-12.col-lg-2
+                    .col-12.col-lg-8
+                        nav.footer__nav
+                            ul
+                                li( class=routeActive('about') ? 'is-active': '' )
+                                    a( href=route('about') ) Обо мне
+
+                                li( class=routeActive('services') ? 'is-active': '' )
+                                    a( href=route('services') ) Усуги
+
+                                li( class=routeActive('cases') ? 'is-active': '' )
+                                    a( href=route('cases') ) Работы
+
+                                li( class=routeActive('contacts') ? 'is-active': '' )
+                                    a( href=route('contacts') ) Контакты
+
+                    .col-12.col-lg-2
+                        ul.footer__social-media.social-media
+                            li
+                                a.icon-behance( href="#" )
+
+                            li
+                                a.icon-facebook( href="#" )
+
+                            li
+                                a.icon-instagram( href="#" )
+                                    span.path1
+                                    span.path2
+
+                .footer__row
