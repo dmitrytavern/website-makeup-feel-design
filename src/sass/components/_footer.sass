@@ -12,17 +12,12 @@
       border-top: 2px solid
       border-bottom: 2px solid
 
-    ul
-      display: flex
-      align-items: center
-      justify-content: center
-
     li
       @include un-margin-horizontal
 
       display: block
+      text-align: center
       line-height: 14px
-      margin: 0 60px
 
       &:hover a
         text-decoration: underline
@@ -42,3 +37,122 @@
 
   &__social-media
     text-align: right
+
+  &__down
+    display: flex
+    justify-content: space-between
+    margin-top: 60px
+
+  &__info
+    span
+      display: block
+
+    &-copyright
+      color: #141414
+      font-size: 14px
+      line-height: 14px
+
+    &-dev,
+    &-dev a
+      font-size: 13px
+      color: #95827B
+      margin-top: 15px
+      line-height: 13px
+
+  &__contacts
+    &-chat
+      margin-left: 60px
+
+  &__contact
+    color: #141414
+    font-size: 15px
+    font-family: 'Gotham Pro', sans-serif
+    font-weight: 500
+
+@include media-md-max
+  .footer
+    &__nav
+      li
+        @include un-margin-vertical
+
+        margin: 30px 0
+
+    &__down
+      margin-top: 40px
+      flex-direction: column-reverse
+
+    &__info
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-between
+
+      margin-top: 25px
+
+      &-copyright
+        max-width: 50%
+        line-height: 18px
+
+      &-dev
+        width: 100%
+        text-align: center
+        margin-top: 30px
+        line-height: 11px
+
+    &__contacts
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      &-chat
+        display: none
+
+    &__social-media-col
+      display: none
+
+
+@include media-md-min
+  .footer
+    &__nav
+      ul
+        display: flex
+        align-items: center
+        justify-content: center
+
+      li
+        margin: 0 15px
+
+    &__social-media-contacts
+      display: none
+
+    &__info
+      &-copyright
+        span
+          display: inline-block
+
+      &-chat
+        display: none
+
+    &__contacts
+      transform: translateY(-18px)
+
+@include media-lg-min
+  .footer
+    &__nav
+      li
+        margin: 0 40px
+
+
+@include media-xl-min
+  .footer
+    &__nav
+      li
+        margin: 0 60px
+
+
+@include media-xx-min
+  .footer
+    &__nav
+      li
+        margin: 0 112px
+

@@ -3,9 +3,9 @@ mixin footer()
         .container
             .footer__inner
 
-                .row.footer__row.footer__nav-row.no-gutters
-                    .col-12.col-lg-2
-                    .col-12.col-lg-8
+                .row.footer__nav-row.no-gutters
+                    .col-12.col-md-3.col-lg-2
+                    .col-12.col-md-6.col-lg-8
                         nav.footer__nav
                             ul
                                 li( class=routeActive('about') ? 'is-active': '' )
@@ -20,7 +20,7 @@ mixin footer()
                                 li( class=routeActive('contacts') ? 'is-active': '' )
                                     a( href=route('contacts') ) Контакты
 
-                    .col-12.col-lg-2
+                    .footer__social-media-col.col-md-3.col-lg-2
                         ul.footer__social-media.social-media
                             li
                                 a.icon-behance( href="#" )
@@ -33,4 +33,31 @@ mixin footer()
                                     span.path1
                                     span.path2
 
-                .footer__row
+                .footer__down
+                    .footer__info
+                        span.footer__info-copyright <span>© Feeldesign. </span> <span> Все права сохранены.</span>
+                        a( href="#" ).footer__info-chat.btn-chat
+                            span.btn-chat__point
+                            i.btn-chat__icon.icon-telegram
+                            span Я онлайн!
+                        span.footer__info-dev Разработка сайта - <a href="//greatpix.studio/" target="_blank">GreatPix</a> & <a href="//azro.studio/" target="_blank">Azro Studio</a>
+
+                    .footer__contacts
+                        a.footer__contact( href="tel:+74957557983" ) +7 495 75 57 983
+
+                        a( href="#" ).footer__contacts-chat.btn-chat
+                            span.btn-chat__point
+                            i.btn-chat__icon.icon-telegram
+                            span Я онлайн!
+
+                        ul.footer__social-media.footer__social-media-contacts.social-media
+                            li
+                                a.icon-behance( href="#" )
+
+                            li
+                                a.icon-facebook( href="#" )
+
+                            li
+                                a.icon-instagram( href="#" )
+                                    span.path1
+                                    span.path2

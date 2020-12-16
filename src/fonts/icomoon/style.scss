@@ -11,6 +11,10 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 .icon-behance-simple:before {
