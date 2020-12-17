@@ -1,9 +1,127 @@
 .btn
-  transition: all .3s
   display: inline-block
-  font-family: 'TTCommons', sans-serif
-  font-weight: 500
+  font-family: 'Gotham Pro', sans-serif
+  font-weight: 400
+  font-size: 17px
+  line-height: 15px
   border: none
   outline: none
   background: none
   cursor: pointer
+
+
+.btn-primary
+  transition: background .3s
+  padding: 26px 48px 25px
+  background: #141414
+  color: #ffffff
+
+  &:hover
+    background: #B19990
+
+
+.btn-primary-outline
+  transition: color .3s, background .3s
+  background: transparent
+  padding: 24px 48px 23px
+  border: 2px solid #141414
+  color: #141414
+
+  &:hover
+    background: #141414
+    color: #ffffff
+
+
+.btn-secondary
+  transition: background .3s
+  padding: 26px 48px 25px
+  background: #FAEFEB
+  color: #141414
+
+  &:hover
+    background: #EEE0DB
+
+.btn-arrow
+  display: inline-flex
+  align-items: center
+  cursor: pointer
+  padding: 5px 0
+  font-size: 9px
+
+  &:before
+    transition: width .3s
+    content: ''
+
+    display: inline-block
+
+    width: 66px
+    height: 1px
+    margin-right: 7px
+
+    background: #000
+
+  &:hover:before
+    width: 102px
+
+
+.btn-arrow-text
+  span
+    font-size: 16px
+    text-align: right
+    display: block
+
+  &__arrow
+    display: flex
+    align-items: center
+    cursor: pointer
+    font-size: 9px
+    margin-top: 3px
+
+    &:after
+      transition: width .3s
+      content: ''
+
+      display: inline-block
+
+      width: 90px
+      height: 1px
+      margin-left: 7px
+
+      background: #000
+
+  &:hover
+    .btn-arrow-text__arrow:after
+      width: 57px
+
+
+.btn-icon
+  display: inline-flex
+  align-items: center
+  color: #141414
+
+  i
+    transition: color .3s
+    font-size: 18px
+    margin-right: 15px
+
+  &:hover i
+    color: #B19990
+
+.btn-underline
+  transition: color .3s
+  color: #B19990
+
+  &:after
+    transition: background .3s
+    content: ''
+    display: block
+    width: 100%
+    height: 1px
+    background: #BCB2AE
+    margin-top: 15px
+
+  &:hover
+    color: #141414
+
+    &:after
+      background: #141414

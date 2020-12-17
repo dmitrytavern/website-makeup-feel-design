@@ -71,9 +71,9 @@
         fill: #000
 
   &.is-scroll
-    .header
-      background: #ffffff
+    background: #ffffff
 
+    .header
       &__inner
         padding: 10px 0
 
@@ -87,6 +87,17 @@
     height: 50px
     min-width: 50px
     min-height: 50px
+
+    span
+      width: 18px
+      margin-left: -9px
+
+      &:first-child
+        transform: translateY(-4px)
+
+      &:last-child
+        transform: translateY(4px)
+
 
 @include media-xl-min
   .header__menu

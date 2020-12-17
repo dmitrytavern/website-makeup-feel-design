@@ -1,4 +1,5 @@
 .btn-chat
+  transition: background .3s, color .3s
   position: relative
 
   display: inline-flex
@@ -32,6 +33,10 @@
 
     // Align font, use TTCommons
     margin-top: 3px
+
+  &:hover
+    background: #141414
+    color: #ffffff
 
 
 @include media-md-min

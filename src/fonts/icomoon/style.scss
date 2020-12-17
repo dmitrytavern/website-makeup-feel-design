@@ -17,47 +17,52 @@
   }
 }
 
-.icon-behance-simple:before {
-  content: "\e902";
-  color: #000;
+
+.icon-arrow-left:before {
+  content: "\e90e";
 }
-.icon-facebook-simple:before {
-  content: "\e907";
-}
-.icon-arrow-right:before {
+.icon-behance-simple .path1:before {
   content: "\e900";
 }
-.icon-behance:before {
+.icon-behance-simple .path2:before {
   content: "\e901";
+  margin-left: -1em;
 }
-.icon-download:before {
+.icon-facebook-simple:before {
+  content: "\e902";
+}
+.icon-arrow-right:before {
+  content: "\e903";
+}
+.icon-behance:before {
   content: "\e904";
 }
-.icon-explamation:before {
+.icon-close:before {
   content: "\e905";
+}
+.icon-download:before {
+  content: "\e906";
+}
+.icon-explamation:before {
+  content: "\e907";
   color: #f44;
 }
 .icon-facebook:before {
-  content: "\e906";
+  content: "\e908";
 }
 .icon-instagram .path1:before {
-  content: "\e908";
-  color: rgb(0, 0, 0);
+  content: "\e909";
 }
 .icon-instagram .path2:before {
-  content: "\e909";
+  content: "\e90a";
   margin-left: -1em;
-  color: rgb(20, 20, 20);
 }
 .icon-instagram-simple:before {
-  content: "\e90a";
+  content: "\e90b";
 }
 .icon-plus:before {
-  content: "\e90b";
+  content: "\e90c";
 }
 .icon-telegram:before {
   content: "\e90d";
-}
-.icon-close:before {
-  content: "\e90c";
 }
