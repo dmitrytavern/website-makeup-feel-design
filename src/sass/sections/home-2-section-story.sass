@@ -1,0 +1,91 @@
+.story
+  position: relative
+  background-color: #faefeb
+
+  &__inner
+    position: relative
+    padding-top: 154px
+    padding-bottom: 59px
+    z-index: 3
+
+  &__image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    max-height: 100%
+    z-index: 1
+
+  &__title-image
+    position: absolute
+    top: 65px
+    left: -20px
+    max-width: 365px
+    z-index: 2
+
+  &__desc
+    max-width: 665px
+
+@include media-lg-max
+  .story__image
+    padding-top: 75px
+    padding-bottom: 90px
+
+@include media-md-max
+  .story__image
+    display: none
+
+@include media-md-min
+  .story
+    &__title-image
+      top: 40px
+      max-width: 488px
+
+    &__inner
+      padding-top: 150px
+      padding-bottom: 82px
+
+    &__desc
+      max-width: 448px
+
+@include media-lg-min
+  .story
+    &__title-image
+      top: 40px
+      left: 20px
+      max-width: 602px
+
+    &__inner
+      padding-top: 145px
+      padding-bottom: 36px
+
+    &__desc
+      max-width: 665px
+
+@include media-xl-min
+  .story
+    &__title-image
+      top: 55px
+      left: 13px
+      max-width: 953px
+
+    &__inner
+      padding-top: 412px
+      padding-bottom: 100px
+
+    &__desc
+      max-width: 665px
+
+@include media-xx-min
+  .story
+    &__title-image
+      top: 105px
+      left: 225px
+      max-width: 1088px
+
+    &__inner
+      padding-top: 616px
+      padding-bottom: 328px
+
+    &__desc
+      max-width: 930px

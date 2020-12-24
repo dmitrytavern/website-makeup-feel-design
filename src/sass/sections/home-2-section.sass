@@ -1,0 +1,26 @@
+.home-section
+
+  &__inner
+    padding-top: 412px
+    padding-bottom: 100px
+
+  &__title
+    line-height: 1em
+    color: #141414
+    text-transform: uppercase
+
+  &__desc
+    margin-top: 36px
+    color: #514c4a
+    line-height: 23px
+
+
+@include media-lg-max
+  .home-section
+    &__desc
+      font-size: 15px
+
+@include media-lg-min
+  .home-section
+    &__desc
+      margin-top: 30px
