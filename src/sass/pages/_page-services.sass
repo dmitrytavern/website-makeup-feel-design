@@ -1,0 +1,59 @@
+.page-services
+  position: relative
+  overflow: hidden
+  padding-top: 240px
+  padding-bottom: 100px
+
+  &__title
+    margin-bottom: 57px
+
+  &__image
+    width: 100%
+    position: absolute
+    top: 230px
+    right: -150px
+    max-width: 545px
+    z-index: -1
+
+    img
+      width: 100%
+
+@include media-md-max
+  .page-services
+    &__image
+      width: 545px
+
+@include media-md-min
+  .page-services
+    padding-top: 280px
+
+    &__image
+      right: -10px
+      max-width: 755px
+
+@include media-lg-min
+  .page-services
+    padding-top: 320px
+    padding-bottom: 130px
+
+    &__image
+      right: 6px
+      max-width: 947px
+
+@include media-xl-min
+  .page-services
+    padding-top: 326px
+
+    &__image
+      top: 145px
+      right: 14px
+      max-width: 1413px
+
+
+@include media-xx-min
+  .page-services
+    padding-top: 380px
+
+    &__image
+      right: 54px
+      max-width: 1681px

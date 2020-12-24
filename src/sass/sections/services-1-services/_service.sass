@@ -1,0 +1,62 @@
+.service
+
+  &__inner
+
+  &__image
+    width: 100%
+
+  &__content
+    flex: 1
+
+  &__name
+
+  &__line
+    display: block
+    width: 119px
+    height: 3px
+    background: #000
+    margin-top: 20px
+
+  &__desc
+    margin-top: 30px
+
+  &__arrow
+
+    &-wrapper
+      margin-top: 35px
+      display: flex
+      justify-content: flex-end
+
+
+@include media-lg-max
+  .service
+    &__image
+      img
+        display: block
+        margin: 0 auto
+        width: 100%
+        max-width: 388px
+
+    &__content
+      padding-top: 35px
+
+    &__arrow
+      margin-top: 20px
+
+@include media-lg-min
+  .service
+    &__image
+      width: 36%
+      max-width: 455px
+
+    &__inner
+      display: flex
+
+    &__content
+      padding-left: 60px
+      padding-top: 10px
+
+@include media-xl-min
+  .service
+    &__content
+      padding-left: 100px

@@ -36,8 +36,8 @@ $(window).on('resize scroll load', scrollPage)
 
 // Parallax
 
+// Home page > Title in sections
 const $homeSectionImages = $('[data-home-section-parallax]')
-
 if ($homeSectionImages.length !== 0) {
     $(window).on('scroll load', function (e) {
         $homeSectionImages.each(function (_, $element) {
@@ -53,6 +53,17 @@ if ($homeSectionImages.length !== 0) {
                 $($el).css('transform', 'translateY(0)')
             }
         })
+    })
+}
+
+// Services page > Page image
+const $servicesPageImage = $('[data-services-parallax]')[0]
+if ($servicesPageImage.length !== 0) {
+    $(window).on('scroll load', function (e) {
+        const $el = $($servicesPageImage)[0]
+
+        const step = window.pageYOffset * 0.12
+        $($el).css('transform', `translateY(${step}px)`)
     })
 }
 
