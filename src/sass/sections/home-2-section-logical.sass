@@ -1,0 +1,137 @@
+.logical
+  position: relative
+  overflow: hidden
+  background-color: #faefeb
+
+  &__image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    max-height: 100%
+    z-index: 1
+
+  &__title-image
+    width: 100%
+    position: absolute
+    top: 141px
+    left: 0
+    max-width: 251px
+
+    img
+      width: 100%
+
+  &__inner
+    position: relative
+    padding-top: 230px
+    padding-bottom: 40px
+    z-index: 3
+
+  &__desc
+    max-width: 100%
+
+  &__buttons
+    margin-top: 69px
+
+
+@include media-xl-max
+  .logical
+    &__image
+      padding-top: 65px
+      transform: translateX(40%)
+
+@include media-md-max
+  .logical
+    &__image
+      padding-top: 85px
+      max-width: 263px
+      transform: translateX(42%)
+
+    &__buttons
+      display: flex
+      flex-direction: column
+      align-items: center
+
+    &__button
+      text-align: center
+      width: 100%
+
+    &__button:last-child
+      margin-top: 48px
+
+      display: flex
+      justify-content: center
+
+@include media-md-min
+  .logical
+    &__inner
+      padding-top: 201px
+      padding-bottom: 73px
+
+    &__title-image
+      top: 65px
+      max-width: 348px
+
+    &__desc
+      max-width: 447px
+
+    &__buttons
+      margin-top: 26px
+
+      display: flex
+      align-items: center
+
+    &__button
+      margin: 0 37px
+
+      @include un-margin-horizontal
+
+@include media-lg-min
+  .logical
+    &__inner
+      padding-top: 195px
+      padding-bottom: 75px
+
+    &__title-image
+      left: 20px
+      max-width: 440px
+
+    &__desc
+      max-width: 682px
+      margin-top: 45px
+
+    &__buttons
+      margin-top: 48px
+
+@include media-xl-min
+  .logical
+    &__inner
+      padding-top: 255px
+      padding-bottom: 136px
+
+    &__title-image
+      top: 60px
+      left: 26px
+      max-width: 641px
+
+    &__desc
+      max-width: 591px
+      margin-top: 108px
+
+@include media-xx-min
+  .logical
+    &__inner
+      padding-top: 412px
+      padding-bottom: 254px
+
+    &__title-image
+      top: 167px
+      left: 222px
+      max-width: 779px
+
+    &__desc
+      max-width: 833px
+      margin-top: 151px
+
+    &__buttons
+      margin-top: 91px
