@@ -49,6 +49,24 @@
     width: 82.5%
 
   &__container
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+  &__inner
+    position: relative
+    width: 100%
+    height: 100%
+
+  &__social-media
+    position: absolute
+    left: 20px
+    bottom: 30px
+
+    a
+      color: #fff
 
 @include media-sm-min
   .intro
@@ -58,6 +76,8 @@
           margin: 0 125px
 
 @include media-xl-min
+  .intro__social-media
+    bottom: 60px
 
 @include media-xx-min
   .intro

@@ -1,10 +1,4 @@
 .social-media
-  li
-    @include un-margin-horizontal
-
-    display: inline-block
-    margin: 0 13px
-
   a
     display: block
     font-size: 22px
@@ -12,3 +6,18 @@
 
     &:hover
       color: #B19990
+
+  &_horizontal
+    li
+      @include un-margin-horizontal
+
+      display: inline-block
+      margin: 0 13px
+
+  &_vertical
+
+    li
+      @include un-margin-vertical
+
+      display: block
+      margin: 25px 0
