@@ -34,6 +34,29 @@ $($headerMenuBtn).on('click', toggleHeaderMenu)
 $(window).on('resize scroll load', scrollPage)
 
 
+// Parallax
+
+const $homeSectionImages = $('[data-home-section-parallax]')
+
+if ($homeSectionImages.length !== 0) {
+    $(window).on('scroll load', function (e) {
+        $homeSectionImages.each(function (_, $element) {
+            const $el = $($element)[0]
+            const downLine = window.pageYOffset + window.innerHeight - 250      // Screen bottom - 250px
+            const topEl = $el.getBoundingClientRect().top + window.pageYOffset  // Global offset
+
+            // If the parallax element is on the screen or above the screen
+            if (topEl <= downLine) {
+                const step = (downLine - topEl) * 0.1
+                $($el).css('transform', `translateY(-${step}px)`)
+            } else {
+                $($el).css('transform', 'translateY(0)')
+            }
+        })
+    })
+}
+
+
 // Sliders
 
 
