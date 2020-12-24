@@ -32,3 +32,48 @@ function toggleHeaderMenu() {
 
 $($headerMenuBtn).on('click', toggleHeaderMenu)
 $(window).on('resize scroll load', scrollPage)
+
+
+// Sliders
+
+
+// Home cases slider
+const $homeCaseDescriptionBlock = $('#home-cases-slide-description')
+if ($homeCaseDescriptionBlock.length !== 0) {
+    const $homeCaseDescriptionName = $homeCaseDescriptionBlock.find('[data-name]')[0]
+    const $homeCaseDescriptionDesc = $homeCaseDescriptionBlock.find('[data-description]')[0]
+    const $homeCaseDescriptionLink = $homeCaseDescriptionBlock.find('[data-link]')[0]
+
+    const sliderHomeCases = new Swiper('.home-cases__slider.swiper-container', {
+        init: false,
+        loop: false,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '.slider__pagination',
+            bulletClass: 'slider__bullet',
+            bulletActiveClass: 'is-active',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'slider__arrow_disabled'
+        },
+    })
+
+    sliderHomeCases.on('init slideChange', function (slider) {
+        const slides = slider.slides
+        const $current = slides[slider.activeIndex]
+
+        const $dataName = $($current).attr('data-name')
+        const $dataDesc = $($current).attr('data-description')
+        const $dataLink = $($current).attr('data-link')
+
+        $homeCaseDescriptionName.innerHTML = $dataName
+        $homeCaseDescriptionDesc.innerHTML = $dataDesc
+        $homeCaseDescriptionLink.href = $dataLink
+    })
+
+    sliderHomeCases.init()
+}

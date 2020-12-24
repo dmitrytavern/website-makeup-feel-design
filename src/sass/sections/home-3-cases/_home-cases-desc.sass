@@ -1,0 +1,69 @@
+.home-cases-desc
+  background: #ffffff
+  padding: 20px 20px 25px
+
+  &__title
+    font-family: "Gotham Pro", sans-serif
+    font-size: 13px
+    font-weight: 700
+    text-transform: uppercase
+    color: #B19990
+    margin-bottom: 23px
+
+  &__name
+    line-height: 1em
+    color: #141414
+    text-transform: uppercase
+
+  &__line
+    display: block
+    width: 119px
+    height: 3px
+    background: #000
+    margin-top: 18px
+
+  &__desc
+    margin-top: 20px
+
+  &__arrow
+    margin-top: 10px
+
+    &-wrapper
+      display: flex
+      justify-content: flex-end
+
+@include media-xl-max
+  .home-cases-desc
+    background: rgba(#fff, .97)
+
+    &__desc
+      display: none
+
+@include media-lg-min
+  .home-cases-desc
+    position: absolute
+    left: 0
+    bottom: 0
+    z-index: 1
+
+    width: 397px
+    padding: 40px 40px 25px
+
+    &__arrow
+      margin-top: 25px
+
+@include media-xl-min
+  .home-cases-desc
+    width: 466px
+    padding: 42px 40px 23px
+
+    &__title
+      display: none
+
+@include media-xx-min
+  .home-cases-desc
+    width: 545px
+    padding: 57px 55px 35px
+
+    &__arrow
+      margin-top: 30px

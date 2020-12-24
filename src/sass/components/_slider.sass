@@ -1,0 +1,81 @@
+.slider
+
+  &__pagination
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #ffffff
+    padding: 7px 30px
+
+  &__bullet
+    display: block
+    transition: background-color .3s, border .3s
+    margin: 0 6px
+    background-color: #d8d8d8
+    border: 1px solid #ffffff
+    border-radius: 50%
+    outline: none
+
+    @include un-margin-horizontal
+
+    &.is-active
+      border-color: #141414
+      background-color: #141414
+
+  &__arrows
+    display: flex
+
+  &__arrow
+    transition: color .3s, background .3s, border-color .3s
+    display: inline-flex
+    align-items: center
+    justify-content: center
+
+    width: 64px
+    height: 64px
+
+    outline: none
+    border: 1px solid #E9E9E9
+    border-radius: 50%
+    background: #fff
+    font-size: 11px
+    cursor: pointer
+    margin: 0 14px
+
+    @include un-margin-horizontal
+
+
+    &:hover:not(&_disabled)
+      color: #fff
+      background: #141414
+      border-color: #141414
+
+    &_disabled
+      color: #BCB2AE
+      background: #E9E9E9
+      cursor: unset
+
+
+@include media-lg-max
+  .slider
+    &__bullet
+      width: 10px
+      height: 10px
+      min-width: 10px
+      min-height: 10px
+
+@include media-lg-min
+  .slider
+    &__pagination
+      padding: 9px 30px
+
+    &__bullet
+      width: 12px
+      height: 12px
+      min-width: 12px
+      min-height: 12px
+
+@include media-xx-min
+  .slider__arrow
+    width: 80px
+    height: 80px

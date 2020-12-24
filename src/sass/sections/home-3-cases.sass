@@ -1,0 +1,52 @@
+.home-cases
+  width: 100%
+
+  &__inner
+    position: relative
+    height: 100%
+
+  &__slider
+    position: relative
+    width: 100%
+    height: 100%
+
+    &-arrows
+      position: absolute
+      right: 112px
+      bottom: 44px
+      z-index: 1
+
+    &-pagination
+
+
+@include media-lg-max
+  .home-cases
+    &__slider
+      &-arrows
+        display: none
+
+@include media-lg-min
+  .home-cases
+    min-height: 100vh
+    height: 100vh
+
+    &__slider
+      &-slide img
+        object-fit: cover
+        height: 100%
+
+      &-pagination
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translateX(-50%)
+        z-index: 1
+
+@include media-xl-min
+  .home-cases
+    &__slider
+      &-arrows
+        position: absolute
+        right: 70px
+
+@import "home-3-cases/home-cases-desc"

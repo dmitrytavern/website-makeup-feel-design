@@ -1,0 +1,35 @@
+section.home-section.home-cases
+    .home-cases__inner
+
+        .swiper-container.home-cases__slider
+            .swiper-wrapper.home-cases__slider-wrapper
+
+                .swiper-slide.home-cases__slider-slide( data-name="Rivera Village" data-description="В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления." data-link="#" )
+                    img( src=require('../../img/cases/case-1.jpg') )
+
+                .swiper-slide.home-cases__slider-slide( data-name="Easy Village" data-description="Совершенствуй мир по средствам текстур и деталей" data-link="case.html" )
+                    img( src=require('../../img/cases/case-1.jpg') )
+
+                .swiper-slide.home-cases__slider-slide( data-name="Creative City" data-description="Человек будущего - живет в гармоничной среде. В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления." data-link="case.html" )
+                    img( src=require('../../img/cases/case-1.jpg') )
+
+            .home-cases__slider-arrows.slider__arrows
+                .slider__arrow.swiper-button-prev
+                    i.icon-arrow-left
+                .slider__arrow.swiper-button-next
+                    i.icon-arrow-right
+
+            .home-cases__slider-pagination.slider__pagination
+
+
+        .home-cases__slide-desc.home-cases-desc#home-cases-slide-description
+            .home-cases-desc__title Мои работы
+            h3.home-cases-desc__name( data-name )
+            span.home-cases-desc__line
+            p.home-cases-desc__desc( data-description ).
+                В основе всего этого - любовь к эстетике и преобразованию мира.
+                Я верю в дизайн и отвергаю  культуру потребления.
+
+            .home-cases-desc__arrow-wrapper
+                a.btn-arrow.home-cases-desc__arrow( href="#" data-link )
+                    i.icon-arrow-right
