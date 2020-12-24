@@ -1,0 +1,18 @@
+.cases
+  &__case
+    margin: 80px 0
+
+    @include un-margin-vertical
+
+
+@include media-md-min
+  .cases
+    &__case
+      margin: 100px 0
+
+@include media-xl-min
+  .cases
+    &__case
+      margin: 140px 0
+
+@import "cases-1-cases/case"

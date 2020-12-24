@@ -1,0 +1,88 @@
+.case
+  &__image
+    display: block
+
+  &__content
+    padding-top: 42px
+
+  &__name
+    text-transform: uppercase
+
+    a
+      color: #141414
+
+  &__line
+    display: block
+    width: 119px
+    height: 3px
+    background: #000
+    margin-top: 20px
+
+  &__desc
+    margin-top: 30px
+
+  &__arrow
+    margin-top: 36px
+
+    &-wrapper
+      display: flex
+      justify-content: flex-end
+
+
+@include media-lg-max
+  .case
+    &__image
+      margin-left: -20px
+      margin-right: -20px
+
+
+@include media-lg-min
+  .case
+    &__inner
+      display: flex
+
+    &__image
+      max-width: 57%
+
+    &__content
+      max-width: 43%
+      padding-left: 40px
+      padding-top: 80px
+
+    &__arrow
+      margin-top: 45px
+
+    &_revert
+      .case
+        &__inner
+          text-align: right
+          flex-direction: row-reverse
+
+        &__image
+          max-width: 51%
+
+        &__line
+          margin-left: auto
+
+        &__content
+          max-width: 49%
+          padding-left: 0
+          padding-right: 40px
+
+@include media-xl-min
+  .case
+    &__content
+      padding-left: 125px
+      padding-top: 90px
+
+    &__desc
+      font-size: 17px
+
+    &__arrow
+      margin-top: 65px
+
+    &_revert
+      .case
+        &__content
+          padding-left: 0
+          padding-right: 125px

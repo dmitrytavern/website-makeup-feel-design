@@ -1,5 +1,6 @@
 .home-section
   overflow: hidden
+
   &__inner
     padding-top: 412px
     padding-bottom: 100px
@@ -22,10 +23,18 @@
 
 @include media-lg-min
   .home-section
+    &__inner
+      padding-left: 50px
+      padding-right: 50px
+
     &__desc
       margin-top: 30px
 
 @include media-xx-min
   .home-section
+    &__inner
+      padding-left: 0
+      padding-right: 0
+
     &__desc
       font-size: 17px

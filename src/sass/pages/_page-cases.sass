@@ -1,0 +1,63 @@
+.page-cases
+  position: relative
+  overflow: hidden
+  padding-top: 240px
+  padding-bottom: 100px
+
+  &__title
+    margin-bottom: 67px
+
+  &__image
+    width: 100%
+    position: absolute
+    max-width: 458px
+    z-index: -1
+
+    img
+      width: 100%
+      max-width: unset
+
+@include media-md-max
+  .page-cases
+    &__image
+      width: 458px
+      top: 160px
+      left: -2px
+
+@include media-md-min
+  .page-cases
+    padding-top: 280px
+
+    &__title
+      margin-bottom: 87px
+
+    &__image
+      top: 152px
+      right: -37px
+      max-width: 641px
+
+@include media-lg-min
+  .page-cases
+    padding-top: 320px
+    padding-bottom: 130px
+
+    &__image
+      top: 220px
+      right: -50px
+      max-width: 803px
+
+@include media-xl-min
+  .page-cases
+    padding-top: 325px
+
+    &__image
+      top: 191px
+      right: 24px
+      max-width: 945px
+
+@include media-xx-min
+  .page-cases
+    &__image
+      top: 132px
+      right: 282px
+      max-width: 1184px

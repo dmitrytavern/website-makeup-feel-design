@@ -33,7 +33,7 @@ $container-gutter-widths: (
   // sm: 40px,
   // md: 100px,
   // lg: 100px,
-  lg: 110px,
+  xl: 110px,
   xx: 10px
 );
 
@@ -58,8 +58,8 @@ $container-max-widths: (
   sm: 576px,
   md: 768px,
   lg: 1100px,
-  xl: 1600px,
-  xx: 1600px
+  xl: 1500px,
+  xx: 1500px
 );
 
 
@@ -79,7 +79,7 @@ $line-height: unset;
 $h1-font-size: (36, 40);
 $h2-font-size: (32, 50);
 $h3-font-size: (24, 30);
-$h4-font-size: (32, 44);
+$h4-font-size: (24, 44);
 
 
 

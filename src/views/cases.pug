@@ -1,0 +1,70 @@
+extends layout/default
+
+block title
+    title Feel Design - Cases
+
+block content
+    main.page-cases
+        .container
+            h1.page-title.page-cases__title Портфолио
+
+        picture.page-cases__image
+            source( src=require('../img/image-titles/image-title-cases-lg.png') media="(min-width: 1024px)" )
+            img( src=require('../img/image-titles/image-title-cases-xs.png') )
+
+        section.cases
+            .container
+                .cases__inner
+
+                    article.cases__case.case
+                        .case__inner
+                            a(href="#").case__image
+                                img( src=require('../img/cases/cases-case-1.png') )
+
+                            .case__content
+                                h4.case__name <a href="#">RIVERA VILLAGE</a>
+                                span.case__line
+                                p.case__desc В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления.
+                                .case__arrow-wrapper
+                                    a(href="#").case__arrow.btn-arrow
+                                        i.icon-arrow-right
+
+                    article.cases__case.case.case_revert
+                        .case__inner
+                            a(href="#").case__image
+                                img( src=require('../img/cases/cases-case-2.png') )
+
+                            .case__content
+                                h4.case__name <a href="#">RIVERA VILLAGE</a>
+                                span.case__line
+                                p.case__desc В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления.
+                                .case__arrow-wrapper
+                                    a(href="#").case__arrow.btn-arrow
+                                        i.icon-arrow-right
+
+
+                    article.cases__case.case
+                        .case__inner
+                            a(href="#").case__image
+                                img( src=require('../img/cases/cases-case-3.png') )
+
+                            .case__content
+                                h4.case__name <a href="#">RIVERA VILLAGE</a>
+                                span.case__line
+                                p.case__desc В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления.
+                                .case__arrow-wrapper
+                                    a(href="#").case__arrow.btn-arrow
+                                        i.icon-arrow-right
+
+                    article.cases__case.case.case_revert
+                        .case__inner
+                            a(href="#").case__image
+                                img( src=require('../img/cases/cases-case-4.png') )
+
+                            .case__content
+                                h4.case__name <a href="#">RIVERA VILLAGE</a>
+                                span.case__line
+                                p.case__desc В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления.
+                                .case__arrow-wrapper
+                                    a(href="#").case__arrow.btn-arrow
+                                        i.icon-arrow-right
