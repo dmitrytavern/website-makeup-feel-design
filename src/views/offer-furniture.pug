@@ -10,11 +10,11 @@ block content
             .page-service-inner__head
                 picture.page-service-inner__head-image
                     source( srcset=require('../img/services-inner/service-inner-furniture-bg.jpg')  media="(min-width: 1024px)" )
-                    img( src=require('../img/services-inner/service-inner-furniture-bg-xs.jpg') )
+                    img( src=require('../img/services-inner/service-inner-furniture-bg-xs.jpg') alt="" )
 
                 picture.page-service-inner__head-title
                     source( srcset=require('../img/image-titles/image-title-furniture-lg.png') media="(min-width: 1024px)" )
-                    img( src=require('../img/image-titles/image-title-furniture-xs.png') )
+                    img( src=require('../img/image-titles/image-title-furniture-xs.png') alt="" )
 
         section.service-inner
             .container
@@ -36,6 +36,80 @@ block content
                         i *Апсайклинг <br/>
                         span Это процесс переработки старых или выброшенных материалов во что-то полезное и красивое.
 
-        section.collentions
+        section.collections
+            .container
+                .collections__inner
+                    h3.collections__title Мои коллекции
+
+                    ul.collections__list
+                        li.collections__collection.collection
+                            a( href="#" )
+                                .collection__inner
+                                    img.collection__image( src=require('../img/collections/collection-img-1.png') alt="")
+                                    .collection__desc
+                                        .collection__name Загаловок Коллекции
+                                        .collection__arrow.btn.btn-arrow-text
+                                            span О коллекции
+                                            .btn-arrow-text__arrow.is-right
+                                                i.icon-arrow-right
+
+                        li.collections__collection.collection
+                            a( href="#" )
+                                .collection__inner
+                                    img.collection__image( src=require('../img/collections/collection-img-2.png') alt="")
+                                    .collection__desc
+                                        .collection__name Загаловок Коллекции
+                                        .collection__arrow.btn.btn-arrow-text
+                                            span О коллекции
+                                            .btn-arrow-text__arrow.is-right
+                                                i.icon-arrow-right
+
+                        li.collections__collection.collection
+                            a( href="#" )
+                                .collection__inner
+                                    img.collection__image( src=require('../img/collections/collection-img-6.png') alt="")
+                                    .collection__desc
+                                        .collection__name Загаловок Коллекции
+                                        .collection__arrow.btn.btn-arrow-text
+                                            span О коллекции
+                                            .btn-arrow-text__arrow.is-right
+                                                i.icon-arrow-right
+
+                        li.collections__collection.collection
+                            a( href="#" )
+                                .collection__inner
+                                    img.collection__image( src=require('../img/collections/collection-img-4.png') alt="")
+                                    .collection__desc
+                                        .collection__name Загаловок Коллекции
+                                        .collection__arrow.btn.btn-arrow-text
+                                            span О коллекции
+                                            .btn-arrow-text__arrow.is-right
+                                                i.icon-arrow-right
+
+                        li.collections__collection.collection
+                            a( href="#" )
+                                .collection__inner
+                                    img.collection__image( src=require('../img/collections/collection-img-3.png') alt="")
+                                    .collection__desc
+                                        .collection__name Загаловок Коллекции
+                                        .collection__arrow.btn.btn-arrow-text
+                                            span О коллекции
+                                            .btn-arrow-text__arrow.is-right
+                                                i.icon-arrow-right
+
+                        li.collections__collection.collection
+                            a( href="#" )
+                                .collection__inner
+                                    img.collection__image( src=require('../img/collections/collection-img-5.png') alt="")
+                                    .collection__desc
+                                        .collection__name Загаловок Коллекции
+                                        .collection__arrow.btn.btn-arrow-text
+                                            span О коллекции
+                                            .btn-arrow-text__arrow.is-right
+                                                i.icon-arrow-right
+
+                    .collections__btn-wrapper
+                        a( href="#" ).collections__btn.btn.btn-underline Показать больше
+
 
         section.banner

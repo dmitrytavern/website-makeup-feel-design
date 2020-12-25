@@ -1,0 +1,55 @@
+.collections
+  margin-top: 100px
+
+  &__title
+    margin-bottom: 70px
+    color: #141414
+
+  &__list
+    columns: 2
+    column-gap: 13px
+
+  &__collection
+    margin-bottom: 9px
+
+  &__btn
+    margin-top: 70px
+
+    &-wrapper
+      display: flex
+      justify-content: center
+
+
+@include media-md-min
+  .collections
+    &__list
+      column-gap: 20px
+
+    &__collection
+      margin-bottom: 20px
+
+@include media-lg-min
+  .collections
+    &__list
+      columns: 3
+
+@include media-xl-min
+  .collections
+    &__list
+      column-gap: 26px
+
+    &__collection
+      margin-bottom: 26px
+
+@include media-xx-min
+  .collections
+    &__list
+      column-gap: 28px
+
+    &__collection
+      margin-bottom: 28px
+
+    &__btn
+      margin-top: 75px
+
+@import "collections/collection"

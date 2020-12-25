@@ -78,7 +78,8 @@
     font-size: 9px
     margin-top: 3px
 
-    &:after
+    &:not(.is-right):after,
+    &.is-right:before
       transition: width .3s
       content: ''
 
@@ -86,9 +87,14 @@
 
       width: 90px
       height: 1px
-      margin-left: 7px
 
       background: #000
+
+    &:not(.is-right):after
+      margin-left: 7px
+
+    &.is-right:before
+      margin-right: 7px
 
   &:hover
     .btn-arrow-text__arrow:after
