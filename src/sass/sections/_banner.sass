@@ -1,0 +1,56 @@
+.banner
+  margin-top: 100px
+  background-color: #faefeb
+
+  &__inner
+    padding-top: 52px
+    padding-bottom: 45px
+    color: #141414
+
+  &__title
+    font-family: 'Gotham Pro', sans-serif
+    font-weight: 700
+    text-transform: uppercase
+
+    @include make-font-size(28, 36)
+
+  &__text
+    font-size: 18px
+    margin-top: 26px
+    line-height: 30px
+
+  &__btn
+
+
+@include media-md-max
+  .banner
+    &__text
+      margin-top: 36px
+
+    &__btn
+      margin-top: 48px
+
+@include media-lg-max
+  .banner
+    &__inner
+      text-align: center
+
+    &__btn
+      margin-top: 35px
+
+@include media-md-min
+  .banner
+    &__inner
+      padding-top: 60px
+      padding-bottom: 52px
+
+@include media-lg-min
+  .banner
+    margin-top: 130px
+
+    &__inner
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding-top: 95px
+      padding-bottom: 120px
