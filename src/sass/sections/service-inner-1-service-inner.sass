@@ -1,0 +1,21 @@
+.service-inner
+  &__content
+    p
+      color: #141414
+      margin: 28px 0
+
+      &.light
+        color: #6e6c6b
+
+@include media-xl-min
+.service-inner
+  &__content
+    max-width: 1210px
+
+@include media-xx-min
+  .service-inner
+    &__content
+      max-width: 1290px
+
+      p:first-child
+        font-size: 17px

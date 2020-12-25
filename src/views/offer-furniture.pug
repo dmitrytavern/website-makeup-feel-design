@@ -1,0 +1,41 @@
+extends layout/default
+
+block title
+    title Feel Design - Offer Furniture
+
+block content
+    main.page-service-inner
+
+        .container-fluid
+            .page-service-inner__head
+                picture.page-service-inner__head-image
+                    source( srcset=require('../img/services-inner/service-inner-furniture-bg.jpg')  media="(min-width: 1024px)" )
+                    img( src=require('../img/services-inner/service-inner-furniture-bg-xs.jpg') )
+
+                picture.page-service-inner__head-title
+                    source( srcset=require('../img/image-titles/image-title-furniture-lg.png') media="(min-width: 1024px)" )
+                    img( src=require('../img/image-titles/image-title-furniture-xs.png') )
+
+        section.service-inner
+            .container
+                .service-inner__content
+                    p.
+                        Качественный дизайн мебели не нуждается в презентации.
+                        Садясь в кресло ты растворяешься и для этого не требуется вступительной речи.
+                        Произведение искусства плюс безупречная функция вот где ты можешь по настоящему
+                        почувствовать дизайн. Мы проектируем мебель и заботимся о том как снизить углеродный
+                        след при производстве. Практикуем *апсайклинг и *ресайклинг подход.
+                        Подбираем лучшие компании для сотрудничества разделяющие наши взгляды на
+                        вопросы экологии и стремление сделать твою жизнь еще приятнее.
+
+                    p.light
+                        i *Ресайклинг <br/>
+                        span В переводе с английского ресайклинг означает «процесс производства сырья из вторичных отходов».
+
+                    p.light
+                        i *Апсайклинг <br/>
+                        span Это процесс переработки старых или выброшенных материалов во что-то полезное и красивое.
+
+        section.collentions
+
+        section.banner

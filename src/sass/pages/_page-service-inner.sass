@@ -1,0 +1,70 @@
+.page-service-inner
+  padding-top: 125px
+
+  &__head
+    position: relative
+    margin-bottom: 85px
+
+    &-image
+      width: 100%
+
+      img
+        width: 100%
+
+    &-title
+      position: absolute
+      left: 10px
+      bottom: -9%
+      width: 90%
+      max-width: 338px
+
+@include media-lg-max
+  .page-service-inner
+      &__head
+        margin-left: -20px
+        margin-right: -20px
+
+@include media-md-min
+  .page-service-inner
+    padding-top: 121px
+
+    &__head
+      margin-bottom: 110px
+
+      &-title
+        width: 66%
+        max-width: 655px
+        left: 28px
+        bottom: -8%
+
+@include media-lg-min
+  .page-service-inner
+    &__head
+      margin-bottom: 125px
+
+      &-title
+        width: 80%
+        max-width: 842px
+        left: 15px
+        bottom: -9%
+
+@include media-xl-min
+  .page-service-inner
+    &__head
+      margin-bottom: 155px
+
+      &-title
+        width: 78%
+        max-width: 1123px
+        bottom: -12%
+
+@include media-xx-min
+  .page-service-inner
+    &__head
+      margin-bottom: 180px
+
+      &-title
+        width: 66%
+        max-width: 1552px
+        left: 5%
+        bottom: -7%
