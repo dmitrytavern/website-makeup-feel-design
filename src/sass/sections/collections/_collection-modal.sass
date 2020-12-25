@@ -1,0 +1,145 @@
+.collection-modal
+  transition: visibility .3s, opacity .3s
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 101
+  background-color: rgba(0, 0, 0, 0.25)
+  display: block !important
+
+  overflow-y: auto
+
+  @include visibility-hidden
+
+  &.show
+    @include visibility-visible
+
+  &__wrapper
+    min-height: 100%
+    padding: 30px 0
+
+    background: #ffffff
+
+    &:not(&_disable-align)
+      display: flex
+      align-items: center
+
+
+  &__inner
+    position: relative
+    color: #141414
+    padding-top: 35px
+
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    align-items: center
+
+    span
+      margin-right: 17px
+
+    i
+      font-size: 12px
+
+  &__title
+    @include make-font-size(26, 50)
+
+  &__desc
+    margin-top: 30px
+
+  &__slider
+    position: relative
+    margin-top: 42px
+
+    &-slide img
+      width: 100%
+
+    &-pagination
+      margin-top: 10px
+
+    &-arrow
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      z-index: 1
+
+      &.swiper-button-prev
+        left: 28px
+
+      &.swiper-button-next
+        right: 28px
+
+  &__btn
+    margin-top: 80px
+    padding-left: 60px
+    padding-right: 60px
+
+    &-wrapper
+      display: flex
+      justify-content: center
+
+@include media-lg-max
+  .collection-modal
+    &__slider
+      &-arrows
+        display: none
+
+@include media-md-max
+  .collection-modal
+    &__close
+      span
+        display: none
+
+@include media-md-min
+  .collection-modal
+    &__desc
+      margin-top: 55px
+
+    &__slider
+      margin-top: 80px
+
+@include media-lg-min
+  .collection-modal
+    padding: 20px
+
+    &__desc
+      max-width: 932px
+
+    &__btn
+      margin-top: 65px
+
+    &__slider
+      &-arrow
+        &.swiper-button-prev
+          left: 40px
+
+        &.swiper-button-next
+          right: 40px
+
+@include media-xl-min
+  .collection-modal
+    &__close
+      right: -20px
+
+    &__desc
+      max-width: 1067px
+      margin-top: 50px
+
+    &__slider
+      margin-top: 100px
+
+      &-arrow
+        &.swiper-button-prev
+          left: 28px
+
+        &.swiper-button-next
+          right: 28px
+
+    &__btn
+      padding-left: 114px
+      padding-right: 114px
+

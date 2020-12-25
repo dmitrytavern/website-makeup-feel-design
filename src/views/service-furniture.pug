@@ -4,7 +4,84 @@ block title
     title Feel Design - Offer Furniture
 
 block content
+    -
+      const collections = [
+          {
+              id: 1,
+              name: 'Easy Village',
+              desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                      'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                      'вот где ты можешь по настоящему почувствовать дизайн.',
+              preview: require('../img/collections/collection-img-1.png'),
+              slides: [
+                  require('../img/collections/collection-img-slide-1.png'),
+                  require('../img/collections/collection-img-slide-1.png'),
+                  require('../img/collections/collection-img-slide-1.png')
+              ]
+          },
+          {
+              id: 2,
+              name: 'Rivera Village',
+              desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                      'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                      'вот где ты можешь по настоящему почувствовать дизайн.',
+              preview: require('../img/collections/collection-img-2.png'),
+              slides: [
+                  require('../img/collections/collection-img-slide-1.png'),
+                  require('../img/collections/collection-img-slide-1.png')
+              ]
+          },
+          {
+              id: 3,
+              name: 'Creative City',
+              desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                      'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                      'вот где ты можешь по настоящему почувствовать дизайн.',
+              preview: require('../img/collections/collection-img-6.png'),
+              slides: [
+                  require('../img/collections/collection-img-slide-1.png'),
+                  require('../img/collections/collection-img-slide-1.png')
+              ]
+          },
+          {
+              id: 4,
+              name: 'Загаловок Коллекции',
+              desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                      'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                      'вот где ты можешь по настоящему почувствовать дизайн.',
+              preview: require('../img/collections/collection-img-4.png'),
+              slides: [
+                  require('../img/collections/collection-img-slide-1.png'),
+              ]
+          },
+          {
+              id: 5,
+              name: 'Простая Коллекция',
+              desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                      'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                      'вот где ты можешь по настоящему почувствовать дизайн.',
+              preview: require('../img/collections/collection-img-3.png'),
+              slides: [
+                  require('../img/collections/collection-img-slide-1.png'),
+                  require('../img/collections/collection-img-slide-1.png')
+              ]
+          },
+          {
+              id: 6,
+              name: 'Легкая Коллекция',
+              desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                      'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                      'вот где ты можешь по настоящему почувствовать дизайн.',
+              preview: require('../img/collections/collection-img-5.png'),
+              slides: [
+                  require('../img/collections/collection-img-slide-1.png'),
+                  require('../img/collections/collection-img-slide-1.png')
+              ]
+          }
+      ]
+
     main.page-service-inner
+
 
         .container-fluid
             .page-service-inner__head
@@ -42,71 +119,51 @@ block content
                     h3.collections__title Мои коллекции
 
                     ul.collections__list
-                        li.collections__collection.collection
-                            a( href="#" )
-                                .collection__inner
-                                    img.collection__image( src=require('../img/collections/collection-img-1.png') alt="")
-                                    .collection__desc
-                                        .collection__name Загаловок Коллекции
-                                        .collection__arrow.btn.btn-arrow-text
-                                            span О коллекции
-                                            .btn-arrow-text__arrow.is-right
-                                                i.icon-arrow-right
 
-                        li.collections__collection.collection
-                            a( href="#" )
-                                .collection__inner
-                                    img.collection__image( src=require('../img/collections/collection-img-2.png') alt="")
-                                    .collection__desc
-                                        .collection__name Загаловок Коллекции
-                                        .collection__arrow.btn.btn-arrow-text
-                                            span О коллекции
-                                            .btn-arrow-text__arrow.is-right
-                                                i.icon-arrow-right
+                        each collection in collections
+                            li.collections__collection.collection
+                                a( href="#" data-toggle="modal" data-target='#service-collection-modal-'+ collection.id ).collection__link
+                                    .collection__inner
+                                        img.collection__image( src=collection.preview alt="")
+                                        .collection__desc
+                                            .collection__name #{collection.name}
+                                            .collection__arrow.btn.btn-arrow-text
+                                                span О коллекции
+                                                .btn-arrow-text__arrow.is-right
+                                                    i.icon-arrow-right
 
-                        li.collections__collection.collection
-                            a( href="#" )
-                                .collection__inner
-                                    img.collection__image( src=require('../img/collections/collection-img-6.png') alt="")
-                                    .collection__desc
-                                        .collection__name Загаловок Коллекции
-                                        .collection__arrow.btn.btn-arrow-text
-                                            span О коллекции
-                                            .btn-arrow-text__arrow.is-right
-                                                i.icon-arrow-right
+                                .collection__modal.collection-modal(id="service-collection-modal-" + collection.id)
+                                    .collection-modal__wrapper
+                                        .container
+                                            .collection-modal__inner
+                                                a( href="#" data-dismiss="modal" ).collection-modal__close
+                                                    span Закрыть
+                                                    i.icon-close
 
-                        li.collections__collection.collection
-                            a( href="#" )
-                                .collection__inner
-                                    img.collection__image( src=require('../img/collections/collection-img-4.png') alt="")
-                                    .collection__desc
-                                        .collection__name Загаловок Коллекции
-                                        .collection__arrow.btn.btn-arrow-text
-                                            span О коллекции
-                                            .btn-arrow-text__arrow.is-right
-                                                i.icon-arrow-right
+                                                h6.collection-modal__title #{collection.name}
+                                                p.collection-modal__desc #{collection.desc}
 
-                        li.collections__collection.collection
-                            a( href="#" )
-                                .collection__inner
-                                    img.collection__image( src=require('../img/collections/collection-img-3.png') alt="")
-                                    .collection__desc
-                                        .collection__name Загаловок Коллекции
-                                        .collection__arrow.btn.btn-arrow-text
-                                            span О коллекции
-                                            .btn-arrow-text__arrow.is-right
-                                                i.icon-arrow-right
+                                                .swiper-container.collection-modal__slider
+                                                    .swiper-wrapper
 
-                        li.collections__collection.collection
-                            a( href="#" )
-                                .collection__inner
-                                    img.collection__image( src=require('../img/collections/collection-img-5.png') alt="")
-                                    .collection__desc
-                                        .collection__name Загаловок Коллекции
-                                        .collection__arrow.btn.btn-arrow-text
-                                            span О коллекции
-                                            .btn-arrow-text__arrow.is-right
-                                                i.icon-arrow-right
+                                                        each slide in collection.slides
+                                                            .swiper-slide.collection-modal__slider-slide
+                                                                img( src=slide )
+
+
+                                                    .collection-modal__slider-arrows
+                                                        .collection-modal__slider-arrow.slider__arrow.swiper-button-prev
+                                                            i.icon-arrow-left
+
+                                                        .collection-modal__slider-arrow.slider__arrow.swiper-button-next
+                                                            i.icon-arrow-right
+
+                                                    .slider__pagination.collection-modal__slider-pagination
+
+
+                                                .collection-modal__btn-wrapper
+                                                    .collection-modal__btn.btn.btn-primary-outline Заказать
+
 
                     .collections__btn-wrapper
                         a( href="#" ).collections__btn.btn.btn-underline Показать больше

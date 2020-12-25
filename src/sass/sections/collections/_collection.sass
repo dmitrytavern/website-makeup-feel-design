@@ -1,8 +1,11 @@
 .collection
-  a
+  &__inner
     position: relative
     display: block
     overflow: hidden
+
+    // Fix Chrome bug
+    // border: 1px solid transparent
 
   &__image
     transition: transform .3s
@@ -51,7 +54,7 @@
     &__desc
       padding: 20px 20px 12px
 
-    &:hover
+    &__inner:hover
       .collection
         &__image
           transform: scale(1.05)

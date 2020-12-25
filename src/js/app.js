@@ -112,6 +112,55 @@ if ($homeCaseDescriptionBlock.length !== 0) {
 }
 
 
+// Service collection sliders
+const collectionModals = $('.collection__modal')
+
+function collectionModalsCheckAlign() {
+    const $collectionModalShow = $('.collection__modal.show')
+    const $wrapper = $collectionModalShow.find('.collection-modal__wrapper')
+    const $inner = $collectionModalShow.find('.collection-modal__inner')
+
+    if ($wrapper.height() < $inner.height()) {
+        $($wrapper).addClass('collection-modal__wrapper_disable-align')
+    } else {
+        $($wrapper).removeClass('collection-modal__wrapper_disable-align')
+    }
+}
+
+collectionModals.on('shown.bs.modal', function () {
+
+    collectionModalsCheckAlign()
+    window.addEventListener('resize', collectionModalsCheckAlign, false)
+
+    if ( !$(this).hasClass('collection-modal_init') ) {
+        const $slider = $(this).find('.collection-modal__slider').get(0)
+
+        new Swiper($slider, {
+            loop: false,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: '.slider__pagination',
+                bulletClass: 'slider__bullet',
+                bulletActiveClass: 'is-active',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                disabledClass: 'slider__arrow_disabled'
+            },
+        })
+
+        $(this).addClass('collection-modal_init')
+    }
+})
+
+collectionModals.on('hide.bs.modal', function () {
+    window.removeEventListener('resize', collectionModalsCheckAlign, false)
+})
+
+
 
 // Forms
 
