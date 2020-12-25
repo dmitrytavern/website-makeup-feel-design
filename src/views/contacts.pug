@@ -15,25 +15,18 @@ block content
                     h1.page-title.page-contacts__title.contacts__title Написать мне
 
                     .contacts__form
-                        form( action="callback.php" )
+                        form( action="callback.php" )#contacts-page-form
                             div
                                 label.contacts__form-input.input-block
                                     input.input-block__input( name="name" placeholder="Имя" data-required)
-                                    .input-block__error
-                                        i.icon-explamation
-                                        span Обязательное поле
 
                                 label.contacts__form-input.input-block
                                     input.input-block__input( name="email" placeholder="Email" data-required)
-                                    .input-block__error
-                                        i.icon-explamation
-                                        span Обязательное поле
 
                                 label.contacts__form-input.input-block
                                     textarea.input-block__input( name="message" rows="1" placeholder="Сообщение" data-required)
-                                    .input-block__error
-                                        i.icon-explamation
-                                        span Обязательное поле
+
+                            .form-error-text Has error
 
                             .contacts__form-btn-wrapper
                                 button( type="submit" ).contacts__form-btn.btn.btn-secondary Отправить

@@ -41,28 +41,27 @@ const $homeSectionImages = $('[data-home-section-parallax]')
 if ($homeSectionImages.length !== 0) {
     $(window).on('scroll load', function (e) {
         $homeSectionImages.each(function (_, $element) {
-            const $el = $($element)[0]
             const downLine = window.pageYOffset + window.innerHeight - 250      // Screen bottom - 250px
-            const topEl = $el.getBoundingClientRect().top + window.pageYOffset  // Global offset
+            const topEl = $element.getBoundingClientRect().top + window.pageYOffset  // Global offset
 
             // If the parallax element is on the screen or above the screen
             if (topEl <= downLine) {
                 const step = (downLine - topEl) * 0.1
-                $($el).css('transform', `translateY(-${step}px)`)
+                $($element).css('transform', `translateY(-${step}px)`)
             } else {
-                $($el).css('transform', 'translateY(0)')
+                $($element).css('transform', 'translateY(0)')
             }
         })
     })
 }
 
 // Services page > Page image
-const $servicesPageImage = $('[data-services-parallax]')[0]
+const $servicesPageImage = $('[data-services-parallax]')
 if ($servicesPageImage.length !== 0) {
     $(window).on('scroll load', function (e) {
         const $el = $($servicesPageImage)[0]
-
         const step = window.pageYOffset * 0.12
+
         $($el).css('transform', `translateY(${step}px)`)
     })
 }
@@ -111,3 +110,80 @@ if ($homeCaseDescriptionBlock.length !== 0) {
 
     sliderHomeCases.init()
 }
+
+
+
+// Forms
+
+
+$('form input, form textarea').on('focus', function () {
+    $(this).removeClass('is-error')
+})
+
+function activateError(el, name) {
+    $(`${el} [name="${name}"]`).addClass('is-error')
+}
+
+function checkInputRequired(el, name) {
+    return $(`${el} [name="${name}"]`).attr('data-required')
+}
+
+function checkFormData(el, data) {
+    let error = false
+    for (let { name, value } of data) {
+        if (value === '') {
+            if (checkInputRequired(el, name) !== undefined) {
+                error = true
+                activateError(el, name)
+            }
+        }
+    }
+
+    return error
+}
+
+function normalizeFormData(data) {
+    let obj = {}
+    for (let { name, value } of data) {
+        obj[name] = value
+    }
+
+    return obj
+}
+
+
+const $contactPageForm = $('#contacts-page-form')
+if ($contactPageForm.length !== 0) {
+    $contactPageForm.submit(function (e) {
+        e.preventDefault()
+        const data = $(this).serializeArray()
+
+        if (!checkFormData('#contacts-page-form', data)) {
+            const normData = normalizeFormData(data)
+
+            $.ajax({
+                url: 'callback.php',
+                method: 'POST',
+                dataType: 'JSON',
+                data: {
+                    site: normData.name,
+                    email: normData.email,
+                    message: normData.message,
+                }
+            })
+              .done(function () {
+                  console.log('Success Send')
+              })
+              .fail(function () {
+                  const $errorText = $contactPageForm.find('.form-error-text')
+                  $errorText.html('Has Error')
+                  $errorText.addClass('is-active')
+
+                  setTimeout(function () {
+                      $errorText.removeClass('is-active')
+                  }, 3000)
+              })
+        }
+    })
+}
+

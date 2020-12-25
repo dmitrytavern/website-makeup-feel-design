@@ -20,6 +20,7 @@ textarea
     color: #000
 
     &::placeholder
+      transition: color .3s
       color: #514C4A
 
     &:focus
@@ -27,6 +28,17 @@ textarea
 
       &::placeholder
         color: #141414
+
+    &.is-error
+      border-color: #FC2A2A
+      color: #FC2A2A
+
+      &::placeholder
+        color: #FC2A2A
+
+      + .input-block__error
+          display: flex
+
 
   &__error
     display: none
@@ -36,15 +48,3 @@ textarea
 
     i
       margin-right: 8px
-
-  &.is-error
-    .input-block
-      &__input
-        border-color: #FC2A2A
-        color: #FC2A2A
-
-        &::placeholder
-          color: #FC2A2A
-
-      &__error
-        display: flex
