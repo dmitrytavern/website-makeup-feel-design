@@ -1,0 +1,106 @@
+.contacts
+  position: relative
+  padding-bottom: 85px
+
+  &__inner
+    display: grid
+
+  &__form
+    &-input
+      display: block
+      margin: 50px 0
+      width: 100%
+
+      @include un-margin-vertical
+
+      input,
+      textarea
+        width: 100%
+
+
+    &-btn
+      &-wrapper
+        margin-top: 50px
+
+  &__link
+    &-group
+      margin: 38px 0
+
+      @include un-margin-vertical
+
+    &-contact
+      span
+        display: block
+
+        &:first-child
+          color: #928985
+          margin-bottom: 13px
+
+        a
+          color: #141414
+
+@include media-lg-max
+  .contacts
+    &__inner
+      padding: 0 65px
+      grid-template-columns: 1fr
+
+    &__links
+      grid-row: 1
+
+    &__title
+      grid-row: 2
+      margin-top: 90px
+
+@include media-md-max
+  .contacts
+    &__inner
+      padding: 0
+
+    &__form
+      &-btn
+        text-align: center
+        width: 100%
+
+@include media-md-min
+  .contacts
+    &__form
+      &-btn
+        &-wrapper
+          display: flex
+          justify-content: flex-end
+
+@include media-lg-min
+  .contacts
+    &__inner
+      grid-template-columns: 43.5% auto
+
+    &__title
+      grid-column: 1/3
+
+    &__links
+      padding-left: 90px
+
+@include media-xl-min
+  .contacts
+    &__inner
+      grid-template-columns: 33.5% auto
+
+    &__links
+      padding-left: 135px
+
+@include media-xx-min
+  .contacts
+    &__inner
+      grid-template-columns: 46% auto
+
+    &__links
+      padding-left: 170px
+
+      &-contact
+        span
+          &:first-child
+            font-size: 17px
+
+          a
+            font-size: 19px

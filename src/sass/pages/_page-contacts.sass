@@ -1,0 +1,98 @@
+.page-contacts
+  position: relative
+  overflow: hidden
+  padding-top: 326px
+
+  &__title
+    margin-bottom: 40px
+
+  &__image-title
+    position: absolute
+    top: 171px
+    left: -5px
+    max-width: 543px
+    z-index: -1
+
+  &__image
+    position: absolute
+    width: 100%
+
+
+@include media-lg-max
+  .page-contacts
+    &__image
+      max-width: 492px
+      top: -78px
+      right: -40px
+
+@include media-md-max
+  .page-contacts
+    &__image-title
+      width: 543px
+
+    &__image
+      max-width: 365px
+      top: -4px
+      right: -157px
+
+
+@include media-md-min
+  .page-contacts
+    &__title
+      margin-bottom: 80px
+
+    &__image-title
+      top: 107px
+      left: -26px
+      max-width: 924px
+
+@include media-lg-min
+  .page-contacts
+    padding-top: 253px
+
+    &__title
+      margin-bottom: 50px
+
+    &__image-title
+      top: 104px
+      max-width: 1187px
+
+    &__image
+      max-width: 587px
+      right: -200px
+      bottom: 10px
+
+@include media-xl-min
+  .page-contacts
+    padding-top: 325px
+
+    &__title
+      margin-bottom: 55px
+
+    &__image-title
+      top: 127px
+      max-width: 1381px
+
+    &__image
+      width: 48%
+      max-width: 770px
+      right: -30px
+      bottom: -30px
+
+@include media-xx-min
+  .page-contacts
+    padding-top: 441px
+
+    &__title
+      margin-bottom: 80px
+
+    &__image-title
+      top: 167px
+      left: -8px
+      max-width: 2074px
+
+    &__image
+      width: 37%
+      max-width: 1030px
+      right: 0
+      bottom: -210px

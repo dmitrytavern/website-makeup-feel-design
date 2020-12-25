@@ -1,0 +1,65 @@
+extends layout/default
+
+block title
+    title Feel Design - Contacts
+
+block content
+    main.page-contacts
+        img.page-contacts__image-title( src=require('../img/image-titles/image-title-contacts-lg.png') )
+
+        section.contacts
+            img.page-contacts__image( src=require('../img/contacts-bg.png') )
+
+            .container
+                .contacts__inner
+                    h1.page-title.page-contacts__title.contacts__title Написать мне
+
+                    .contacts__form
+                        form( action="callback.php" )
+                            div
+                                label.contacts__form-input.input-block
+                                    input.input-block__input( name="name" placeholder="Имя" data-required)
+                                    .input-block__error
+                                        i.icon-explamation
+                                        span Обязательное поле
+
+                                label.contacts__form-input.input-block
+                                    input.input-block__input( name="email" placeholder="Email" data-required)
+                                    .input-block__error
+                                        i.icon-explamation
+                                        span Обязательное поле
+
+                                label.contacts__form-input.input-block
+                                    textarea.input-block__input( name="message" rows="1" placeholder="Сообщение" data-required)
+                                    .input-block__error
+                                        i.icon-explamation
+                                        span Обязательное поле
+
+                            .contacts__form-btn-wrapper
+                                button( type="submit" ).contacts__form-btn.btn.btn-secondary Отправить
+
+                    .contacts__links
+
+                        .contacts__link-group.contacts__link-contact
+                            span Телефон
+                            span
+                                a( href="tel:+74957557983" ) +7 495 75 57 983
+
+                        .contacts__link-group.contacts__link-contact
+                            span Email:
+                            span
+                                a( href="mailto:info@feeldaria.com" ) info@feeldaria.com
+
+                        ul.contacts__link-group.social-media.social-media_horizontal
+                            li
+                                a.icon-behance( href="#" )
+
+                            li
+                                a.icon-facebook( href="#" )
+
+                            li
+                                a.icon-instagram( href="#" )
+                                    span.path1
+                                    span.path2
+
+block footer
