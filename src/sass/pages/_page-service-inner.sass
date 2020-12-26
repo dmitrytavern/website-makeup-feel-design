@@ -14,9 +14,14 @@
     &-title
       position: absolute
       left: 10px
-      bottom: -9%
-      width: 90%
-      max-width: 338px
+      bottom: -0.45em
+
+      font-family: 'Gotham Pro', sans-serif
+      font-weight: bold
+      color: #141414
+      line-height: 1em
+
+      @include make-font-size(72, 270, 480, 2000)
 
 @include media-lg-max
   .page-service-inner
@@ -32,10 +37,7 @@
       margin-bottom: 110px
 
       &-title
-        width: 66%
-        max-width: 655px
         left: 28px
-        bottom: -8%
 
 @include media-lg-min
   .page-service-inner
@@ -43,20 +45,12 @@
       margin-bottom: 125px
 
       &-title
-        width: 80%
-        max-width: 842px
         left: 15px
-        bottom: -9%
 
 @include media-xl-min
   .page-service-inner
     &__head
       margin-bottom: 155px
-
-      &-title
-        width: 78%
-        max-width: 1123px
-        bottom: -12%
 
 @include media-xx-min
   .page-service-inner
@@ -64,7 +58,4 @@
       margin-bottom: 180px
 
       &-title
-        width: 66%
-        max-width: 1552px
         left: 5%
-        bottom: -7%

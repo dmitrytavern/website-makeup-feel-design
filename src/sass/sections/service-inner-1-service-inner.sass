@@ -7,6 +7,17 @@
       &.light
         color: #6e6c6b
 
+  &__spliter
+    max-width: 400px
+    width: 100%
+    height: 3px
+    margin-top: 36px
+    background: #faefeb
+
+  &__btn-download
+    margin-top: 34px
+
+
 @include media-xl-min
 .service-inner
   &__content
@@ -17,5 +28,5 @@
     &__content
       max-width: 1290px
 
-      p:first-child
+      p:not(.light)
         font-size: 17px
