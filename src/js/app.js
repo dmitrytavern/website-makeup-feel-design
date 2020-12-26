@@ -1,5 +1,8 @@
 import '../sass/app.sass'
 
+$(document).ready(function () {
+    document.body.classList.add('is-loaded')
+})
 
 //  Header
 
@@ -32,6 +35,25 @@ function toggleHeaderMenu() {
 
 $($headerMenuBtn).on('click', toggleHeaderMenu)
 $(window).on('resize scroll load', scrollPage)
+
+
+
+// Modals
+
+$('.modal').on('show.bs.modal', function () {
+    document.body.classList.add('modal-open-main')
+    $('.modal-custom-backdrop').addClass('is-open')
+})
+
+$('.modal').on('hide.bs.modal', function () {
+    document.body.classList.remove('modal-open-main')
+    $('.modal-custom-backdrop').removeClass('is-open')
+})
+
+$('.modal-custom-backdrop').on('click', function () {
+    $('.modal').modal('hide')
+})
+
 
 
 // Parallax
@@ -112,58 +134,8 @@ if ($homeCaseDescriptionBlock.length !== 0) {
 }
 
 
-// Service collection sliders
-const collectionModals = $('.collection__modal')
-
-function collectionModalsCheckAlign() {
-    const $collectionModalShow = $('.collection__modal.show')
-    const $wrapper = $collectionModalShow.find('.collection-modal__wrapper')
-    const $inner = $collectionModalShow.find('.collection-modal__inner')
-
-    if ($wrapper.height() < $inner.height()) {
-        $($wrapper).addClass('collection-modal__wrapper_disable-align')
-    } else {
-        $($wrapper).removeClass('collection-modal__wrapper_disable-align')
-    }
-}
-
-collectionModals.on('shown.bs.modal', function () {
-
-    collectionModalsCheckAlign()
-    window.addEventListener('resize', collectionModalsCheckAlign, false)
-
-    if ( !$(this).hasClass('collection-modal_init') ) {
-        const $slider = $(this).find('.collection-modal__slider').get(0)
-
-        new Swiper($slider, {
-            loop: false,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            pagination: {
-                el: '.slider__pagination',
-                bulletClass: 'slider__bullet',
-                bulletActiveClass: 'is-active',
-                clickable: true
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-                disabledClass: 'slider__arrow_disabled'
-            },
-        })
-
-        $(this).addClass('collection-modal_init')
-    }
-})
-
-collectionModals.on('hide.bs.modal', function () {
-    window.removeEventListener('resize', collectionModalsCheckAlign, false)
-})
-
-
 
 // Forms
-
 
 $('form input, form textarea').on('focus', function () {
     $(this).removeClass('is-error')
@@ -201,6 +173,7 @@ function normalizeFormData(data) {
 }
 
 
+
 const $contactPageForm = $('#contacts-page-form')
 if ($contactPageForm.length !== 0) {
     $contactPageForm.submit(function (e) {
@@ -236,3 +209,163 @@ if ($contactPageForm.length !== 0) {
     })
 }
 
+
+// Form in order modal
+const $modalOrder = $('#modal-order')
+const $modalOrderForm = $('#modal-order-form')
+
+if ($contactPageForm.length !== 0) {
+    $modalOrderForm.submit(function (e) {
+        e.preventDefault()
+        const data = $(this).serializeArray()
+
+        if (!checkFormData('#modal-order', data)) {
+            const normData = normalizeFormData(data)
+
+            $.ajax({
+                url: 'callback.php',
+                method: 'POST',
+                dataType: 'JSON',
+                data: {
+                    name: normData.name,
+                    email: normData.email,
+                    collection: normData.collection
+                }
+            })
+              .done(function () {
+                  $modalOrder.find('.modal__tab').removeClass('is-active')
+                  $modalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+              })
+              .fail(function () {
+                  const $errorText = $modalOrderForm.fin('.form-error-text')
+                  $errorText[0].innerHTML = 'Has Error'
+                  $errorText.addClass('is-active')
+
+                  setTimeout(function () {
+                      $modalOrderForm.find('.form-error-text').removeClass('is-active')
+                  }, 3000)
+              })
+        }
+    })
+}
+
+
+// Form in modal
+// Service collection
+const $collectionModals = $('.collection__modal')
+const $collectionModalOrder = $('#modal-order-collection')
+const $collectionModalOrderForm = $('#modal-order-collection-form')
+
+function collectionModalsCheckAlign() {
+    const $collectionModalShow = $('.collection__modal.show')
+    const $wrapper = $collectionModalShow.find('.collection-modal__wrapper')
+    const $inner = $collectionModalShow.find('.collection-modal__inner')
+
+    if ($wrapper.height() < $inner.height()) {
+        $($wrapper).addClass('collection-modal__wrapper_disable-align')
+    } else {
+        $($wrapper).removeClass('collection-modal__wrapper_disable-align')
+    }
+}
+
+$collectionModals.on('shown.bs.modal', function () {
+    document.body.classList.add('collection-modal-open')
+
+    collectionModalsCheckAlign()
+    window.addEventListener('resize', collectionModalsCheckAlign, false)
+
+    if ( !$(this).hasClass('collection-modal_init') ) {
+        const $slider = $(this).find('.collection-modal__slider').get(0)
+
+        new Swiper($slider, {
+            loop: false,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: '.slider__pagination',
+                bulletClass: 'slider__bullet',
+                bulletActiveClass: 'is-active',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                disabledClass: 'slider__arrow_disabled'
+            },
+        })
+
+        $(this).addClass('collection-modal_init')
+    }
+})
+
+$collectionModals.on('hide.bs.modal', function () {
+    document.body.classList.remove('collection-modal-open')
+    window.removeEventListener('resize', collectionModalsCheckAlign, false)
+})
+
+$collectionModalOrder.on('shown.bs.modal', function () {
+    const $collectionModalShow = $('.collection__modal.show')
+    const collectionSend = $collectionModalShow.attr('data-send')
+
+    if (collectionSend === 'false') {
+        $collectionModalOrder.find('.modal__tab').removeClass('is-active')
+        $collectionModalOrder.find('.modal__tab[data-name="form"]').addClass('is-active')
+
+        const $collectionFormInputs = $collectionModalOrder.find('input')
+        const $collectionFormCollectionInput = $collectionModalOrder.find('input[name="collection"]')
+        const collectionId = $collectionModalShow.attr('data-id-collection')
+
+        $collectionFormInputs.val('')
+        $collectionFormCollectionInput.val(collectionId)
+    } else {
+        // Set success tab in modal
+
+        $collectionModalOrder.find('.modal__tab').removeClass('is-active')
+        $collectionModalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+    }
+})
+
+if ($collectionModalOrderForm.length !== 0) {
+    $collectionModalOrderForm.submit(function (e) {
+        e.preventDefault()
+        const data = $(this).serializeArray()
+
+        if (!checkFormData('#modal-order-collection', data)) {
+            const normData = normalizeFormData(data)
+
+            // REMOVE FROM PRODUCTION VERSION!
+            const $collectionModalShow = $('.collection__modal.show')
+            $collectionModalShow.attr('data-send', 'true')
+
+            $collectionModalOrder.find('.modal__tab').removeClass('is-active')
+            $collectionModalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+
+            $.ajax({
+                url: 'callback.php',
+                method: 'POST',
+                dataType: 'JSON',
+                data: {
+                    name: normData.name,
+                    email: normData.email,
+                    collection: normData.collection
+                }
+            })
+              .done(function () {
+                  const $collectionModalShow = $('.collection__modal.show')
+                  $collectionModalShow.attr('data-send', 'true')
+
+                  $collectionModalOrder.find('.modal__tab').removeClass('is-active')
+                  $collectionModalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+              })
+              .fail(function () {
+                  const $errorText = $collectionModalOrderForm.find('.form-error-text')
+                  $errorText[0].innerHTML = 'Has Error'
+                  $errorText.addClass('is-active')
+
+                  setTimeout(function () {
+                      $collectionModalOrderForm.find('.form-error-text').removeClass('is-active')
+                  }, 3000)
+              })
+        }
+    })
+}

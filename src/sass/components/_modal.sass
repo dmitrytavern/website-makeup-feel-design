@@ -1,0 +1,91 @@
+body.is-loaded .modal
+  transition: visibility .3s, opacity .3s
+
+  &-custom-backdrop
+    transition: visibility .3s, opacity .3s
+
+.modal
+  @include visibility-hidden
+
+  width: 100%
+  max-width: 455px
+  padding: 0 20px !important
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 102
+
+  // Bg
+  &-custom-backdrop
+    @include visibility-hidden
+
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 101
+    background: rgba(#d8d8d8, .90)
+    backdrop-filter: blur(5px)
+
+    &.is-open
+      @include visibility-visible
+
+  &.show
+    @include visibility-visible
+
+  &__wrapper
+    position: relative
+    background: #ffffff
+    padding: 48px 30px 30px
+
+  &__title
+    text-align: center
+    margin-bottom: 55px
+
+    @include make-font-size(28, 34)
+
+  &__close
+    display: inline-flex
+    position: absolute
+    top: 8px
+    right: -40px
+    font-size: 12px
+    cursor: pointer
+    padding: 5px
+
+
+  &__tab
+    display: none
+
+    &[data-name="success"]
+      text-align: center
+      font-family: "TTCommons", sans-serif
+
+    &.is-active
+      display: block
+
+  &__input
+    display: block
+    margin: 65px 0
+
+    input
+      width: 100%
+
+  &__btn
+    display: block
+    min-width: 200px
+    text-align: center
+    margin: 97px auto 0
+
+
+@include media-md-max
+  .modal
+    &__wrapper
+      padding-left: 20px
+      padding-right: 20px
+
+    &__close
+      top: 8px
+      right: 8px

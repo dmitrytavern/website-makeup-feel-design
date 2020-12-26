@@ -1,0 +1,31 @@
+#modal-order.modal
+    .modal__wrapper
+
+        .modal__close( data-dismiss="modal" )
+            i.icon-close
+
+        .modal__tab( data-name="form" ).is-active
+            h2.modal__title Оставить заявку
+            form#modal-order-form( method="POST" action="/callback-order" )
+
+                div
+                    label.input-block.modal__input
+                        input.input-block__input( type="text" name="email" placeholder="Имя" data-required )
+                        .input-block__error
+                            i.icon-explamation
+                            span Обязательное поле
+
+                    label.input-block.modal__input
+                        input.input-block__input( type="email" name="email" placeholder="Email" data-required )
+                        .input-block__error
+                            i.icon-explamation
+                            span Обязательное поле
+
+                .form-error-text Has Error
+
+                button( type="submit" ).btn.btn-primary.modal__btn.modal__btn-send Отправить
+
+        .modal__tab( data-name="success" )
+            h3.modal__subtitle Заказ отправлен!
+            p Спасибо, Ваш заказ принят в обработку! <br/> Мы свяжемся с вами в ближайнее время!
+            a(href="#" data-dismiss="modal").btn.btn-primary.modal__btn.modal__btn-success Закрыть

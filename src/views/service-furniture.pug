@@ -132,7 +132,7 @@ block content
                                                 .btn-arrow-text__arrow.is-right
                                                     i.icon-arrow-right
 
-                                .collection__modal.collection-modal(id="service-collection-modal-" + collection.id)
+                                .collection__modal.collection-modal(id="service-collection-modal-" + collection.id data-id-collection=collection.id data-send="false")
                                     .collection-modal__wrapper
                                         .container
                                             .collection-modal__inner
@@ -162,10 +162,15 @@ block content
 
 
                                                 .collection-modal__btn-wrapper
-                                                    .collection-modal__btn.btn.btn-primary-outline Заказать
+                                                    .collection-modal__btn.btn.btn-primary-outline( data-toggle="modal" data-target="#modal-order-collection" ) Заказать
 
 
                     .collections__btn-wrapper
                         a( href="#" ).collections__btn.btn.btn-underline Показать больше
 
         include sections/banner
+
+block modal
+    include components/modal
+    include components/modal-collection
+    include components/modal-backdrop
