@@ -1,0 +1,22 @@
+extends layout/default
+
+block title
+    title Feel Design - Offer Decor
+
+block content
+    main.page-service-inner
+        .container-fluid
+            .page-service-inner__head
+                picture.page-service-inner__head-image
+                    source( srcset=require('../img/services-inner/service-inner-decor-bg.jpg')  media="(min-width: 1024px)" )
+                    img( src=require('../img/services-inner/service-inner-decor-bg-xs.jpg') alt="" )
+
+                h1.page-service-inner__head-title Decor
+
+        include sections/collection
+        include sections/banner
+
+block modal
+    include components/modal
+    include components/modal-collection
+    include components/modal-backdrop
