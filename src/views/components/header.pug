@@ -6,8 +6,15 @@ mixin header(string)
                     svg.logo__icon
                         use( xlink:href=sprite('logo') )
 
-                if routeActive('service-furniture') || routeActive('service-light') || routeActive('service-decor') || routeActive('case')
+                if routeActive('service-furniture') || routeActive('service-light') || routeActive('service-decor')
                     a(href=route('services')).header__back
+                        .btn.btn-arrow-text
+                            span Назад
+                            .btn-arrow-text__arrow
+                                i.icon-arrow-left
+
+                if routeActive('case')
+                    a(href=route('cases')).header__back
                         .btn.btn-arrow-text
                             span Назад
                             .btn-arrow-text__arrow
