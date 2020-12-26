@@ -1,35 +1,55 @@
 section.case-details
     .container
-        .case-details__inner
+        h2.page-case__section-title Детали проекта
 
-            h2.page-case__section-title Детали проекта
+        .case-details__plan.case-detail-plan
+            .case-detail-plan__content
+                .case-detail-plan__legend
+                    .case-detail-plan__title Экспозиция площадью - 2.500 тыс. м2
+                    ul.case-detail-plan__steps
+                        li.case-detail-plan__step
+                            .case-detail-plan__step-num 1
+                            span Зона обслуживания
 
-            .case-details__plan.case-detail-plan
-                .case-detail-plan__content
-                    .case-detail-plan__legend
-                        .case-detail-plan__title Экспозиция площадью - 2.500 тыс. м2
-                        ul.case-detail-plan__steps
-                            li.case-detail-plan__step
-                                .case-detail-plan__step-num 1
-                                span Зона обслуживания
+                        li.case-detail-plan__step
+                            .case-detail-plan__step-num 2
+                            span Пространство лабиринта
 
-                            li.case-detail-plan__step
-                                .case-detail-plan__step-num 2
-                                span Пространство лабиринта
+                        li.case-detail-plan__step
+                            .case-detail-plan__step-num 3
+                            span Территория экспозиции
 
-                            li.case-detail-plan__step
-                                .case-detail-plan__step-num 3
-                                span Территория экспозиции
+                        li.case-detail-plan__step
+                            .case-detail-plan__step-num 4
+                            span Администрация
 
-                            li.case-detail-plan__step
-                                .case-detail-plan__step-num 4
-                                span Администрация
+                        li.case-detail-plan__step
+                            .case-detail-plan__step-num.case-detail-plan__step-num_ico
+                                svg
+                                    use( xlink:href=require('../../img/icons/s.svg') + '#ico' )
+                            span Пешеходный маршрут
 
-                            li.case-detail-plan__step
-                                .case-detail-plan__step-num.case-detail-plan__step-num_ico
-                                    svg
-                                        use( xlink:href=require('../../img/icons/s.svg') + '#ico' )
-                                span Пешеходный маршрут
+                .case-detail-plan__image
+                    img( src=require('../../img/case/case-inner-plan.jpg') )
 
-                    .case-detail-plan__image
-                        img( src=require('../../img/case/case-inner-plan.jpg') )
+    .container
+        .case-details__interior.case-detail-interior
+            p.page-case__text В дизайн проекте продумана каждая деталь от плана экспликации до декора на столиках в баре-ресторане.
+            img.page-case__image( src=require('../../img/case/case-inner-img-1.png') )
+
+    .case-details__cinema.case-detail-cinema
+        .container
+            .case-detail-cinema__content
+                div.case-detail-cinema__content-text
+                    h3.case-detail-cinema__title Купольный кинотеатр
+                    p.case-detail-cinema__desc.
+                        Купольный кинотеатр для просмотра познавательных фильмов об
+                        океане окружен  подвесным мостиком  пройдя по которому можно
+                        наблюдать фотоэкспозиция по теме- влияние человека на жизнь в океане.
+
+                .case-detail-cinema__mini-image
+                    p Боковая проекция
+                    img( src=require('../../img/case/case-inner-cupol-2.png') )
+
+            .case-detail-cinema__image
+                img( src=require('../../img/case/case-inner-cupol-1.jpg') )

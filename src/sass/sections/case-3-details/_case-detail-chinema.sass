@@ -1,0 +1,79 @@
+.case-detail-cinema
+  position: relative
+
+  &__title
+    color: #141414
+    font-size: 19px
+
+  &__desc
+    line-height: 23px
+    margin-top: 24px
+
+  &__mini-image
+    margin-top: 95px
+
+    p
+      color: #b19990
+      font-size: 16px
+      line-height: 23px
+      margin-bottom: 26px
+
+@include media-lg-max
+  .case-detail-cinema
+    &__content
+      display: flex
+      justify-content: space-between
+
+      &-text
+        max-width: 410px
+
+    &__mini-image
+      max-width: 257px
+      margin-top: 50px
+
+
+    &__image
+      margin-top: 55px
+
+@include media-md-max
+  .case-detail-cinema
+    &__mini-image
+      display: none
+
+    &__image
+      margin-top: 32px
+
+@include media-lg-min
+  .case-detail-cinema
+    &__content
+      padding-top: 52px
+      max-width: 360px
+
+    &__image
+      position: absolute
+      top: 0
+      right: -30%
+      z-index: -1
+      max-width: 997px
+
+    &__mini-image
+      padding-right: 40px
+
+@include media-xl-min
+  .case-detail-cinema
+    &__content
+      max-width: 470px
+      padding-bottom: 100px
+
+    &__image
+      right: -24%
+      max-width: 1265px
+
+    &__mini-image
+      margin-top: 110px
+
+@include media-xx-min
+  .case-detail-cinema
+    &__image
+      right: 20px
+      max-width: 1355px

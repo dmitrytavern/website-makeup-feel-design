@@ -1,18 +1,41 @@
 .case-details
   margin-top: 80px
 
-  &__inner
+  &__plan
+    margin-bottom: 100px
+
+  &__interior
+    margin-bottom: 70px
 
 @include media-md-min
   .case-details
     margin-top: 140px
 
+    &__plan
+      margin-bottom: 130px
+
+    &__interior
+      margin-bottom: 140px
+
 @include media-lg-min
   .case-details
     margin-top: 160px
 
-@include media-lg-min
+    &__interior
+      margin-bottom: 90px
+
+@include media-xl-min
   .case-details
     margin-top: 195px
 
+    &__plan
+      margin-bottom: 140px
+
+@include media-xx-min
+  .case-details
+    &__interior
+      margin-bottom: 110px
+
 @import "case-3-details/case-detail-plan"
+@import "case-3-details/case-detail-interior"
+@import "case-3-details/case-detail-chinema"
