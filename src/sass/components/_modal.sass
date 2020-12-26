@@ -46,6 +46,12 @@ body.is-loaded .modal
 
     @include make-font-size(28, 34)
 
+  &__subtitle
+    font-family: 'TTCommons', sans-serif
+    font-weight: bold
+    font-size: 28px
+    margin-bottom: 26px
+
   &__close
     display: inline-flex
     position: absolute
@@ -61,6 +67,7 @@ body.is-loaded .modal
 
     &[data-name="success"]
       text-align: center
+      font-size: 19px
       font-family: "TTCommons", sans-serif
 
     &.is-active
@@ -70,14 +77,19 @@ body.is-loaded .modal
     display: block
     margin: 65px 0
 
+    @include un-margin-vertical
+
     input
       width: 100%
 
   &__btn
     display: block
-    min-width: 200px
+    max-width: 200px
     text-align: center
     margin: 97px auto 0
+
+    &-success
+      margin-top: 60px
 
 
 @include media-md-max

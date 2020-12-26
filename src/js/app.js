@@ -149,6 +149,11 @@ function checkInputRequired(el, name) {
     return $(`${el} [name="${name}"]`).attr('data-required')
 }
 
+function changeModalTab($el, tabName) {
+    $el.find('.modal__tab').removeClass('is-active')
+    $el.find(`.modal__tab[data-name="${tabName}"]`).addClass('is-active')
+}
+
 function checkFormData(el, data) {
     let error = false
     for (let { name, value } of data) {
@@ -214,13 +219,17 @@ if ($contactPageForm.length !== 0) {
 const $modalOrder = $('#modal-order')
 const $modalOrderForm = $('#modal-order-form')
 
-if ($contactPageForm.length !== 0) {
+if ($modalOrderForm.length !== 0) {
     $modalOrderForm.submit(function (e) {
         e.preventDefault()
         const data = $(this).serializeArray()
 
         if (!checkFormData('#modal-order', data)) {
             const normData = normalizeFormData(data)
+
+            // REMOVE IN PRODUCTION VERSION
+            changeModalTab($modalOrder, 'success')
+            // END REMOVE
 
             $.ajax({
                 url: 'callback.php',
@@ -233,11 +242,10 @@ if ($contactPageForm.length !== 0) {
                 }
             })
               .done(function () {
-                  $modalOrder.find('.modal__tab').removeClass('is-active')
-                  $modalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+                  changeModalTab($modalOrder, 'success')
               })
               .fail(function () {
-                  const $errorText = $modalOrderForm.fin('.form-error-text')
+                  const $errorText = $modalOrderForm.find('.form-error-text')
                   $errorText[0].innerHTML = 'Has Error'
                   $errorText.addClass('is-active')
 
@@ -250,7 +258,6 @@ if ($contactPageForm.length !== 0) {
 }
 
 
-// Form in modal
 // Service collection
 const $collectionModals = $('.collection__modal')
 const $collectionModalOrder = $('#modal-order-collection')
@@ -308,8 +315,8 @@ $collectionModalOrder.on('shown.bs.modal', function () {
     const collectionSend = $collectionModalShow.attr('data-send')
 
     if (collectionSend === 'false') {
-        $collectionModalOrder.find('.modal__tab').removeClass('is-active')
-        $collectionModalOrder.find('.modal__tab[data-name="form"]').addClass('is-active')
+        // Set form tab in modal
+        changeModalTab($collectionModalOrder, 'form')
 
         const $collectionFormInputs = $collectionModalOrder.find('input')
         const $collectionFormCollectionInput = $collectionModalOrder.find('input[name="collection"]')
@@ -319,9 +326,7 @@ $collectionModalOrder.on('shown.bs.modal', function () {
         $collectionFormCollectionInput.val(collectionId)
     } else {
         // Set success tab in modal
-
-        $collectionModalOrder.find('.modal__tab').removeClass('is-active')
-        $collectionModalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+        changeModalTab($collectionModalOrder, 'success')
     }
 })
 
@@ -334,11 +339,12 @@ if ($collectionModalOrderForm.length !== 0) {
             const normData = normalizeFormData(data)
 
             // REMOVE FROM PRODUCTION VERSION!
+
             const $collectionModalShow = $('.collection__modal.show')
             $collectionModalShow.attr('data-send', 'true')
+            changeModalTab($collectionModalOrder, 'success')
 
-            $collectionModalOrder.find('.modal__tab').removeClass('is-active')
-            $collectionModalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+            // END REMOVE
 
             $.ajax({
                 url: 'callback.php',
@@ -354,8 +360,7 @@ if ($collectionModalOrderForm.length !== 0) {
                   const $collectionModalShow = $('.collection__modal.show')
                   $collectionModalShow.attr('data-send', 'true')
 
-                  $collectionModalOrder.find('.modal__tab').removeClass('is-active')
-                  $collectionModalOrder.find('.modal__tab[data-name="success"]').addClass('is-active')
+                  changeModalTab($collectionModalOrder, 'success')
               })
               .fail(function () {
                   const $errorText = $collectionModalOrderForm.find('.form-error-text')
