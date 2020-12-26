@@ -1,11 +1,31 @@
 .service-inner
   &__content
+    color: #141414
+
     p
-      color: #141414
       margin: 28px 0
 
       &.light
         color: #6e6c6b
+
+    h2
+      @include make-font-size($h5-font-size...)
+      margin-top: 120px
+      margin-bottom: 70px
+
+    h3
+      text-transform: uppercase
+      color: #b19990
+      font-size: 16px
+      margin: 70px 0 35px
+
+      &:after
+        content: ''
+        display: block
+        width: 190px
+        height: 3px
+        background: #faefeb
+        margin-top: 10px
 
   &__spliter
     max-width: 400px
@@ -14,9 +34,13 @@
     margin-top: 36px
     background: #faefeb
 
-  &__btn-download
-    margin-top: 34px
+  &__btn
+    &-download
+      margin-top: 34px
 
+    &-view
+      margin-top: 8px
+      margin-bottom: 10px
 
 @include media-xl-min
 .service-inner
