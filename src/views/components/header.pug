@@ -6,7 +6,7 @@ mixin header(string)
                     svg.logo__icon
                         use( xlink:href=sprite('logo') )
 
-                if routeActive('service-furniture') || routeActive('service-light') || routeActive('service-decor')
+                if routeActive('service-furniture') || routeActive('service-light') || routeActive('service-decor') || routeActive('case')
                     a(href=route('services')).header__back
                         .btn.btn-arrow-text
                             span Назад

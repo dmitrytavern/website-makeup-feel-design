@@ -1,0 +1,18 @@
+extends layout/default
+
+block title
+    title Feel Design - Case
+
+block content
+    main.page-case
+
+        .page-case__head
+            img.page-case__head-image( src=require('../img/case-header-bg.png') alt="" )
+            .container.page-case__head-title-container
+                h1.page-case__head-title Ocean ecology museum
+
+
+        include sections/case-1-description
+        include sections/case-2-coloristics
+        include sections/case-3-details
+        include sections/banner

@@ -1,0 +1,49 @@
+.page-case
+
+  &__head
+    position: relative
+
+    &-image
+      width: 100%
+
+    &-title
+      text-transform: uppercase
+      color: #141414
+
+      @include make-font-size(20, 60)
+
+@include media-md-max
+  .page-case
+    &__head
+      margin-bottom: 60px
+
+      &-title-container
+        margin-top: 8px
+
+@include media-md-min
+  .page-case
+    &__head
+      margin-bottom: 70px
+
+      &-title
+        position: absolute
+        bottom: 17px
+
+@include media-lg-min
+  .page-case
+    &__head
+      margin-bottom: 75px
+
+      &-title-container
+        bottom: 40px
+
+@include media-xl-min
+  .page-case
+    &__head
+      &-title-container
+        bottom: 36px
+
+@include media-xx-min
+  .page-case
+    &__head
+      margin-bottom: 100px
