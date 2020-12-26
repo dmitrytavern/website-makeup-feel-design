@@ -1,0 +1,97 @@
+.case-detail-plan
+
+  &__content
+    font-family: 'Gotham Pro', sans-serif
+
+  &__legend
+
+  &__title
+    font-size: 19px
+    font-weight: 700
+    margin-bottom: 65px
+
+  &__steps
+
+  &__step
+    display: flex
+    align-items: center
+    font-size: 17px
+
+    @include un-margin-vertical
+
+    &-num
+      width: 66px
+      height: 66px
+      min-width: 66px
+      min-height: 66px
+
+      display: flex
+      align-items: center
+      justify-content: center
+
+      font-size: 18px
+      font-weight: 700
+      border: 3px solid #faefeb
+      border-radius: 50%
+      margin-right: 28px
+      line-height: 1em
+
+      &_ico svg
+        width: 16px
+        height: 22px
+        font-size: 28px
+        fill: #a7f8a7
+
+  &__image
+
+@include media-lg-max
+  .case-detail-plan
+    &__legend
+      margin-bottom: 70px
+
+    &__steps
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-row-gap: 28px
+
+@include media-md-max
+  .case-detail-plan
+    &__legend
+      margin-bottom: 48px
+
+    &__steps
+      grid-template-columns: 1fr
+      grid-column-gap: 24px
+
+    &__step-num
+      width: 46px
+      height: 46px
+      min-width: 46px
+      min-height: 46px
+      margin-right: 20px
+
+@include media-md-min
+  .case-detail-plan
+    &__step-num
+      font-size: 20px
+
+      &_ico svg
+        width: 20px
+        height: 27px
+
+@include media-lg-min
+  .case-detail-plan
+    &__content
+      display: grid
+      grid-template-columns: auto 1fr
+
+    &__legend
+      margin-right: 70px
+
+    &__step
+      margin: 48px 0
+
+@include media-xl-min
+  .case-detail-plan
+    &__legend
+      margin-right: 140px

@@ -1,1 +1,35 @@
 section.case-details
+    .container
+        .case-details__inner
+
+            h2.page-case__section-title Детали проекта
+
+            .case-details__plan.case-detail-plan
+                .case-detail-plan__content
+                    .case-detail-plan__legend
+                        .case-detail-plan__title Экспозиция площадью - 2.500 тыс. м2
+                        ul.case-detail-plan__steps
+                            li.case-detail-plan__step
+                                .case-detail-plan__step-num 1
+                                span Зона обслуживания
+
+                            li.case-detail-plan__step
+                                .case-detail-plan__step-num 2
+                                span Пространство лабиринта
+
+                            li.case-detail-plan__step
+                                .case-detail-plan__step-num 3
+                                span Территория экспозиции
+
+                            li.case-detail-plan__step
+                                .case-detail-plan__step-num 4
+                                span Администрация
+
+                            li.case-detail-plan__step
+                                .case-detail-plan__step-num.case-detail-plan__step-num_ico
+                                    svg
+                                        use( xlink:href=require('../../img/icons/s.svg') + '#ico' )
+                                span Пешеходный маршрут
+
+                    .case-detail-plan__image
+                        img( src=require('../../img/case/case-inner-plan.jpg') )
