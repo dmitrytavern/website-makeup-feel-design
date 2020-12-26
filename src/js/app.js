@@ -134,6 +134,16 @@ if ($homeCaseDescriptionBlock.length !== 0) {
 }
 
 
+// Case inner page
+const $caseColorBoxes = $('.case-coloristics__color-box')
+if ($caseColorBoxes.length !== 0) {
+    $(window).on('resize load', function () {
+        $caseColorBoxes.height(
+          $caseColorBoxes.width() + 'px'
+        )
+    })
+}
+
 
 // Forms
 
