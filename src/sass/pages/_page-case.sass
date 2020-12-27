@@ -44,7 +44,7 @@
     &__head
       margin-bottom: 60px
 
-      &-title-container
+      &-title
         margin-top: 8px
 
 @include media-md-min
@@ -54,21 +54,35 @@
 
       &-title
         position: absolute
-        bottom: 17px
+        bottom: 0
+        padding-bottom: 17px
+        z-index: 1
+
+        &:before
+          content: ''
+          display: block
+
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)
+          z-index: -1
 
 @include media-lg-min
   .page-case
     &__head
       margin-bottom: 75px
 
-      &-title-container
-        bottom: 40px
+      &-title
+        padding-bottom: 40px
 
 @include media-xl-min
   .page-case
     &__head
-      &-title-container
-        bottom: 36px
+      &-title
+        padding-bottom: 36px
 
 @include media-xx-min
   .page-case

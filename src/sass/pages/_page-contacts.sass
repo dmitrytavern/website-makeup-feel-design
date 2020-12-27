@@ -15,31 +15,24 @@
 
   &__image
     position: absolute
-    width: 100%
-
-
-@include media-lg-max
-  .page-contacts
-    &__image
-      max-width: 492px
-      top: -78px
-      right: -40px
+    max-width: 365px
+    top: -4px
+    right: -157px
 
 @include media-md-max
   .page-contacts
     &__image-title
       width: 543px
 
-    &__image
-      max-width: 365px
-      top: -4px
-      right: -157px
-
-
 @include media-md-min
   .page-contacts
     &__title
       margin-bottom: 80px
+
+    &__image
+      max-width: 492px
+      top: -80px
+      right: -40px
 
     &__image-title
       top: 107px
@@ -59,8 +52,8 @@
 
     &__image
       max-width: 587px
+      top: 10px
       right: -200px
-      bottom: 10px
 
 @include media-xl-min
   .page-contacts
@@ -77,7 +70,7 @@
       width: 48%
       max-width: 770px
       right: -30px
-      bottom: -30px
+      top: -25px
 
 @include media-xx-min
   .page-contacts
@@ -95,4 +88,4 @@
       width: 37%
       max-width: 1030px
       right: 0
-      bottom: -210px
+      top: -55px

@@ -1,8 +1,9 @@
 
-script( src=require('../../../js/vendor/jquery.min.js') )
-script( src=require('../../../js/vendor/bootstrap.min') )
-script( src=require('../../../js/vendor/swiper-bundle.min') )
+script( src=require('../js/vendor/jquery.min.js') )
+script( src=require('../js/vendor/bootstrap.min') )
+script( src=require('../js/vendor/swiper-bundle.min') )
 
+block scripts-lib
 
 each file in htmlWebpackPlugin.files.js
 
@@ -32,4 +33,4 @@ if scriptPageExists()
 			}
 		}
 
-	script( src=requireScript(require.context('../../../js/', true, /pages\/.*js/)) )
+	script( src=requireScript(require.context('../js/', true, /pages\/.*js/)) )

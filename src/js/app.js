@@ -25,40 +25,42 @@ function scrollPage() {
 
     // Chat
 
-    if (window.innerWidth >= 768) {
-        const footerTop     = $anchor.offset().top
-        const btnChatHeight = $btnChat.height()
+    if ($anchor.length !== 0) {
+        if (window.innerWidth >= 768) {
+            const footerTop = $anchor.offset().top
+            const btnChatHeight = $btnChat.height()
 
-        $anchor.css('padding-right', $btnChat.outerWidth() + 60)
+            $anchor.css('padding-right', $btnChat.outerWidth() + 60)
 
-        if (footerTop <= window.pageYOffset + window.innerHeight - (btnChatHeight / 2) - 18) {
-            const number = footerTop + btnChatHeight
+            if (footerTop <= window.pageYOffset + window.innerHeight - (btnChatHeight / 2) - 18) {
+                const number = footerTop + btnChatHeight
 
-            $btnChatContainer.css({ top: number+'px' })
-            $btnChatContainer.addClass('is-absolute')
-            $btnChat.addClass('is-fixed')
+                $btnChatContainer.css({top: number + 'px'})
+                $btnChatContainer.addClass('is-absolute')
+                $btnChat.addClass('is-fixed')
+            } else {
+                $btnChatContainer.css({top: 'unset'})
+                $btnChatContainer.removeClass('is-absolute')
+                $btnChat.removeClass('is-fixed')
+            }
         } else {
-            $btnChatContainer.css({ top: 'unset' })
-            $btnChatContainer.removeClass('is-absolute')
-            $btnChat.removeClass('is-fixed')
-        }
-    } else {
-        const anchorMobileTop = $anchorMobile.offset().top
-        const anchorMobileHeight = $anchorMobile.outerHeight() // 36px
-        const btnChatHeight = $btnChat.outerHeight() // 50px
+            const anchorMobileTop = $anchorMobile.offset().top
+            const anchorMobileHeight = $anchorMobile.outerHeight() // 36px
+            const btnChatHeight = $btnChat.outerHeight() // 50px
 
-        $anchor.css('padding-right', 0)
+            $anchor.css('padding-right', 0)
 
-        if (anchorMobileTop <= window.pageYOffset + window.innerHeight - btnChatHeight + ((btnChatHeight - anchorMobileHeight) / 2)) {
-            const number = anchorMobileTop + btnChatHeight - ((btnChatHeight - anchorMobileHeight) / 2)
+            if (anchorMobileTop <= window.pageYOffset + window.innerHeight - btnChatHeight + ((btnChatHeight - anchorMobileHeight) / 2)) {
+                const number = anchorMobileTop + btnChatHeight - ((btnChatHeight - anchorMobileHeight) / 2)
 
-            $btnChatContainer.css({ top: number+'px' })
-            $btnChatContainer.addClass('is-absolute')
-            $btnChat.addClass('is-fixed')
-        } else {
-            $btnChatContainer.css({ top: 'unset' })
-            $btnChatContainer.removeClass('is-absolute')
-            $btnChat.removeClass('is-fixed')
+                $btnChatContainer.css({top: number + 'px'})
+                $btnChatContainer.addClass('is-absolute')
+                $btnChat.addClass('is-fixed')
+            } else {
+                $btnChatContainer.css({top: 'unset'})
+                $btnChatContainer.removeClass('is-absolute')
+                $btnChat.removeClass('is-fixed')
+            }
         }
     }
 
@@ -224,6 +226,11 @@ if ($caseColorBoxes.length !== 0) {
 
 
 // Forms
+
+const $contactsPageTextarea = $('textarea.input-block__input')
+if ($contactsPageTextarea.length !== 0) {
+    autosize($contactsPageTextarea)
+}
 
 $('form input, form textarea').on('focus', function () {
     $(this).removeClass('is-error')
