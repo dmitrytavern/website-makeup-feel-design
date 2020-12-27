@@ -9,6 +9,16 @@ if mode === 'production'
            if file.search('.min') <= -1
                link(href=file rel="preload" as="style")
 
+     link(href=require('../../../fonts/GothamPro/GothamPro.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+     link(href=require('../../../fonts/GothamPro/GothamPro.woff') rel="preload" as="font" type="font/woff2" crossorigin)
+     link(href=require('../../../fonts/Nunito/Nunito-Regular.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+     link(href=require('../../../fonts/GothamPro/GothamPro-Medium.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+     link(href=require('../../../fonts/GothamPro/GothamPro-Medium.woff') rel="preload" as="font" type="font/woff2" crossorigin)
+     link(href=require('../../../fonts/TTCommons/TTCommons-Regular.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+     link(href=require('../../../fonts/TTCommons/TTCommons-Medium.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+     link(href=require('../../../fonts/TTCommons/TTCommons-Bold.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+     link(href=require('../../../fonts/icomoon/icomoon.ttf') rel="preload" as="font" type="font/ttf" crossorigin)
+
 
      each file in htmlWebpackPlugin.files.css
          if process.env.BUILD_REQUIRED_MIN_CSS === 'true'
