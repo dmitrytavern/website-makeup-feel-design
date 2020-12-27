@@ -133,6 +133,33 @@ if ($homeCaseDescriptionBlock.length !== 0) {
     sliderHomeCases.init()
 }
 
+// Case inner slider
+const $caseSlider = $('.swiper-container.case-detail-slider__slider')
+if ($caseSlider.length !== 0) {
+    new Swiper('.case-detail-slider__slider.swiper-container', {
+        loop: false,
+        slidesPerView: 1.3,
+        spaceBetween: 20,
+        pagination: {
+            el: '.slider__pagination',
+            bulletClass: 'slider__bullet',
+            bulletActiveClass: 'is-active',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'slider__arrow_disabled'
+        },
+        breakpoints: {
+            1023: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            }
+        }
+    })
+}
+
 
 // Case inner page
 const $caseColorBoxes = $('.case-coloristics__color-box')

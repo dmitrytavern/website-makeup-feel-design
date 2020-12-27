@@ -1,0 +1,58 @@
+.case-detail-slider
+  &__slider
+    position: relative
+
+  &__slide
+    height: unset
+
+    img
+      display: block
+      object-fit: cover
+      width: 100%
+      height: 100%
+
+  &__arrow
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 1
+
+    &.swiper-button-prev
+      left: 18px
+
+    &.swiper-button-next
+      right: 18px
+
+@include media-lg-max
+  .case-detail-slider
+    margin-left: -20px
+    margin-right: -20px
+
+    &__slider
+      padding-left: 20px
+      padding-right: 20px
+
+    &__arrows
+      display: none
+
+    &__pagination
+      margin-top: 15px
+
+@include media-lg-min
+  .case-detail-slider
+    &__pagination
+      position: absolute
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+      z-index: 1
+
+
+@include media-xl-min
+  .case-detail-slider
+    &__arrow
+      &.swiper-button-prev
+        left: 25px
+
+      &.swiper-button-next
+        right: 25px

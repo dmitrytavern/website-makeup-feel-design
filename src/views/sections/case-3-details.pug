@@ -53,3 +53,25 @@ section.case-details
 
             .case-detail-cinema__image
                 img( src=require('../../img/case/case-inner-cupol-1.jpg') )
+
+    .container
+        .case-details__slider.case-detail-slider
+            .swiper-container.case-detail-slider__slider
+                .swiper-wrapper.case-detail-slider__wrapper
+                    .swiper-slide.case-detail-slider__slide
+                        img( src=require('../../img/case/case-inner-img-2.jpg') )
+
+                    .swiper-slide.case-detail-slider__slide
+                        img( src=require('../../img/case/case-inner-img-1.png') )
+
+                    .swiper-slide.case-detail-slider__slide
+                        img( src=require('../../img/case/case-inner-img-2.jpg') )
+
+                div.case-detail-slider__arrows
+                    .case-detail-slider__arrow.slider__arrow.swiper-button-prev
+                        i.icon-arrow-left
+
+                    .case-detail-slider__arrow.slider__arrow.swiper-button-next
+                        i.icon-arrow-right
+
+                .slider__pagination.case-detail-slider__pagination
