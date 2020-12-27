@@ -18,6 +18,11 @@ function scrollPage() {
         $header.removeClass('is-scroll')
     }
 
+    const $casePageContent = $('.page-case')
+    if ($casePageContent.length !== 0) {
+        $casePageContent.css('padding-top', $header.outerHeight(true))
+    }
+
     /*
     setTimeout(function () {
         if (window.innerWidth < 992) $menu.css('padding-top', $header.outerHeight(true))

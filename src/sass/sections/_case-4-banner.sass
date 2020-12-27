@@ -1,0 +1,86 @@
+.case-banner
+  background-color: #faefeb
+  margin-top: 100px
+
+  &__inner
+    display: flex
+    justify-content: space-between
+
+    padding-top: 70px
+    padding-bottom: 40px
+
+  &__arrow
+    width: 100%
+
+    .btn-arrow-text
+      display: inline-flex
+      flex-direction: column
+      justify-content: space-between
+      height: 100%
+
+    .btn-arrow-text__arrow:after,
+    .btn-arrow-text__arrow:before
+      width: 170px
+
+    &_prev
+
+    &_next
+      text-align: right
+
+      .btn-arrow-text
+        align-items: flex-end
+
+    &-title
+      text-transform: uppercase
+      color: #141414
+      font-size: 26px
+      line-height: 30px
+      margin-bottom: 20px
+
+@include media-lg-max
+  .case-banner
+    &__inner
+      justify-content: center
+      flex-wrap: wrap
+
+    &__btn
+      margin-top: 50px
+      order: 3
+
+    &__arrow
+      width: 50%
+
+@include media-md-max
+  .case-banner
+    &__btn
+      margin-top: 60px
+
+    &__arrow
+      width: 100%
+
+      &_next
+        margin-top: 50px
+
+@include media-md-min
+  .case-banner
+    &__inner
+      padding-bottom: 30px
+
+@include media-lg-min
+  .case-banner
+    &__inner
+      padding-bottom: 80px
+
+    &__arrow
+      max-width: 315px
+
+    &__btn
+      align-self: center
+      padding-left: 90px
+      padding-right: 90px
+
+@include media-xl-min
+  .case-banner
+    &__btn
+      padding-left: 140px
+      padding-right: 140px
