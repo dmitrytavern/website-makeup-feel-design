@@ -6,10 +6,14 @@ $(document).ready(function () {
 
 //  Header
 
-const $header         = $('header')
-const $headerMenuBtn  = $('#header-menu-btn')
-const $menu           = $('.menu')
+const $header           = $('header')
+const $headerMenuBtn    = $('#header-menu-btn')
+const $menu             = $('.menu')
 
+const $btnChatContainer = $('#chat-container')
+const $btnChat          = $('#chat')
+const $anchor           = $('.footer__contact')
+const $anchorMobile     = $('.footer__info-copyright')
 
 function scrollPage() {
     if (window.pageYOffset > 0) {
@@ -18,10 +22,47 @@ function scrollPage() {
         $header.removeClass('is-scroll')
     }
 
-    const $casePageContent = $('.page-case')
-    if ($casePageContent.length !== 0) {
-        $casePageContent.css('padding-top', $header.outerHeight(true))
+
+    // Chat
+
+    if (window.innerWidth >= 768) {
+        const footerTop     = $anchor.offset().top
+        const btnChatHeight = $btnChat.height()
+
+        $anchor.css('padding-right', $btnChat.outerWidth() + 60)
+
+        if (footerTop <= window.pageYOffset + window.innerHeight - (btnChatHeight / 2) - 18) {
+            const number = footerTop + btnChatHeight
+
+            $btnChatContainer.css({ top: number+'px' })
+            $btnChatContainer.addClass('is-absolute')
+            $btnChat.addClass('is-fixed')
+        } else {
+            $btnChatContainer.css({ top: 'unset' })
+            $btnChatContainer.removeClass('is-absolute')
+            $btnChat.removeClass('is-fixed')
+        }
+    } else {
+        const anchorMobileTop = $anchorMobile.offset().top
+        const anchorMobileHeight = $anchorMobile.outerHeight() // 36px
+        const btnChatHeight = $btnChat.outerHeight() // 50px
+
+        $anchor.css('padding-right', 0)
+
+        if (anchorMobileTop <= window.pageYOffset + window.innerHeight - btnChatHeight + ((btnChatHeight - anchorMobileHeight) / 2)) {
+            const number = anchorMobileTop + btnChatHeight - ((btnChatHeight - anchorMobileHeight) / 2)
+
+            $btnChatContainer.css({ top: number+'px' })
+            $btnChatContainer.addClass('is-absolute')
+            $btnChat.addClass('is-fixed')
+        } else {
+            $btnChatContainer.css({ top: 'unset' })
+            $btnChatContainer.removeClass('is-absolute')
+            $btnChat.removeClass('is-fixed')
+        }
     }
+
+
 
     /*
     setTimeout(function () {
@@ -98,12 +139,9 @@ if ($servicesPageImage.length !== 0) {
 
 
 // Home cases slider
-const $homeCaseDescriptionBlock = $('#home-cases-slide-description')
-if ($homeCaseDescriptionBlock.length !== 0) {
-    const $homeCaseDescriptionName = $homeCaseDescriptionBlock.find('[data-name]')[0]
-    const $homeCaseDescriptionDesc = $homeCaseDescriptionBlock.find('[data-description]')[0]
-    const $homeCaseDescriptionLink = $homeCaseDescriptionBlock.find('[data-link]')[0]
+const $homeCaseSlider = $('.home-cases__slider.swiper-container')
 
+if ($homeCaseSlider.length !== 0) {
     const sliderHomeCases = new Swiper('.home-cases__slider.swiper-container', {
         init: false,
         loop: false,
@@ -123,16 +161,24 @@ if ($homeCaseDescriptionBlock.length !== 0) {
     })
 
     sliderHomeCases.on('init slideChange', function (slider) {
-        const slides = slider.slides
-        const $current = slides[slider.activeIndex]
+        const $homeCaseDescriptionBlock = $('#home-cases-slide-description')
 
-        const $dataName = $($current).attr('data-name')
-        const $dataDesc = $($current).attr('data-description')
-        const $dataLink = $($current).attr('data-link')
+        if ($homeCaseDescriptionBlock.length !== 0) {
+            const $nameBlock = $homeCaseDescriptionBlock.find('[data-name]')
+            const $descBlock = $homeCaseDescriptionBlock.find('[data-description]')
+            const $linkBlock = $homeCaseDescriptionBlock.find('[data-link]')
 
-        $homeCaseDescriptionName.innerHTML = $dataName
-        $homeCaseDescriptionDesc.innerHTML = $dataDesc
-        $homeCaseDescriptionLink.href = $dataLink
+            const slides = slider.slides
+            const $current = slides[slider.activeIndex]
+
+            const $dataName = $($current).attr('data-name')
+            const $dataDesc = $($current).attr('data-description')
+            const $dataLink = $($current).attr('data-link')
+
+            $nameBlock.html($dataName)
+            $descBlock.html($dataDesc)
+            $linkBlock.attr('href', $dataLink)
+        }
     })
 
     sliderHomeCases.init()

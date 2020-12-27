@@ -43,10 +43,6 @@
 // grid-col($breakpoint, $columns, $offsets, $grid-columns, $prefix);
 // grid-col('md', [1, 2, 3], [], 12, '');
 
-@include grid-col('xs'); // Without prefix
-@include grid-col('xs', [2], [], 10, '-profile');
-@include grid-col('sm', [2, 3, 4, 6]);
-@include grid-col('md', [2, 3, 4, 6]);
-@include grid-col('lg', [2, 3, 4, 6, 8]);
-@include grid-col('xl', [2, 3, 4, 6]);
-// @include grid-col('xx');
+@include grid-col('xs', [12]); // Without prefix
+@include grid-col('md', [3, 6]);
+@include grid-col('lg', [2, 8]);

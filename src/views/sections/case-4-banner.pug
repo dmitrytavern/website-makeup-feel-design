@@ -3,17 +3,17 @@ section.case-banner
         .case-banner__inner
 
             .case-banner__arrow.case-banner__arrow_prev
-                a( href="#" ).btn.btn-arrow-text
+                a( href=route('case') ).btn.btn-arrow-text
                     h6.case-banner__arrow-title Ocean ecology museum
                     .btn-arrow-text__arrow
                         i.icon-arrow-left
 
 
-            a( href="#" ).case-banner__btn.btn.btn-primary-outline Оставить заявку
+            a( href="#" data-toggle="modal" data-target="#modal-order" ).case-banner__btn.btn.btn-primary-outline Оставить заявку
 
 
             .case-banner__arrow.case-banner__arrow_next
-                a( href="#" ).btn.btn-arrow-text
+                a( href=route('case') ).btn.btn-arrow-text
                     h6.case-banner__arrow-title RIVERA VILLAGE
                     .btn-arrow-text__arrow.is-right
                         i.icon-arrow-right
