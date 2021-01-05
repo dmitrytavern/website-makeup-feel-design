@@ -84,8 +84,14 @@ $(window).on('click', function (e) {
     const $target = e.target
     const click = $('.menu')[0].contains($target)
     const containsClass = $target.classList.contains('header-menu-btn')
+    let containsSpan = false
+    if ($target.offsetParent.classList) {
+        containsSpan = $target.offsetParent.classList.contains('header-menu-btn')
+    }
 
-    if (!(click || containsClass)) {
+    console.log($target)
+
+    if (!(click || containsClass || containsSpan)) {
         closeHeaderMenu()
     }
 })

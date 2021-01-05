@@ -7,8 +7,11 @@
   transform: translateX(100%)
   z-index: 110
 
-  background-color: rgba(235, 235, 235, 0.8)
+  background-color: rgba(235, 235, 235, 0.9)
   backdrop-filter: blur(50px)
+
+  @supports not (backdrop-filter: blur(50px))
+    background-color: rgba(235, 235, 235, 1)
 
   &-backdrop
     position: absolute
@@ -24,7 +27,7 @@
       @include visibility-visible
 
   &__inner
-    padding-top: 200px
+    padding-top: 100px
 
   &__close
     position: absolute
@@ -38,7 +41,7 @@
 
     li
       position: relative
-      margin: 100px 0
+      margin: 70px 0
       padding-left: 70px
       padding-right: 70px
 
@@ -97,6 +100,9 @@
 
 @include media-xl-min
   .menu
+    &__inner
+      padding-top: 150px
+
     &__nav
       font-size: 50px
 
@@ -112,8 +118,12 @@
     &__close
       right: 100px
 
+    &__inner
+      padding-top: 200px
+
     &__nav
       font-size: 70px
 
       li
+        margin: 100px 0
         padding-right: 235px

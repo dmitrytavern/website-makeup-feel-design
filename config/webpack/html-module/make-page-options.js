@@ -25,7 +25,7 @@ module.exports = function (config, page) {
 
 			route(url) {
 				const name = url.match(/\.html/) ? url : url+'.html'
-				return join('/', name)
+				return join(name)
 			},
 
 			routeActive: function (route) {
