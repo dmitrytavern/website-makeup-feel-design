@@ -1,0 +1,119 @@
+.menu
+  transition: .3s transform
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  transform: translateX(100%)
+  z-index: 110
+
+  background-color: rgba(235, 235, 235, 0.8)
+  backdrop-filter: blur(50px)
+
+  &-backdrop
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 109
+
+    @include visibility-hidden
+
+    &.is-open
+      @include visibility-visible
+
+  &__inner
+    padding-top: 200px
+
+  &__close
+    position: absolute
+    top: 30px
+    right: 20px
+
+  &__nav
+    font-family: "Gotham Pro", sans-serif
+    font-weight: 700
+    font-size: 38px
+
+    li
+      position: relative
+      margin: 100px 0
+      padding-left: 70px
+      padding-right: 70px
+
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+
+        width: 40px
+        height: 1px
+        background: #141414
+        display: none
+
+      @include un-margin-vertical
+
+      &.is-active
+        &:before
+          display: block
+
+        a
+          color: #141414
+
+          &:before
+            display: none
+
+    a
+      position: relative
+      color: #ffffff
+
+      &:before
+        transition: width .3s
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 0
+        height: 2px
+        background: #ffffff
+
+      &:hover:before
+        width: 100%
+
+
+  &.is-open
+    transform: translateX(0)
+
+@include media-sm-max
+  .menu
+    width: 100%
+
+@include media-md-max
+  .menu
+    &__inner
+      padding-left: 25px
+
+@include media-xl-min
+  .menu
+    &__nav
+      font-size: 50px
+
+      li
+        padding-left: 130px
+        padding-right: 130px
+
+        &:before
+          width: 70px
+
+@include media-xx-min
+  .menu
+    &__close
+      right: 100px
+
+    &__nav
+      font-size: 70px
+
+      li
+        padding-right: 235px

@@ -1,11 +1,17 @@
 .logo
   &__icon
-    width: 207px
-    height: 36px
-    display: block
+    width: 200px
+    height: 20px
+    display: none
 
-    &_while
-      fill: #ffffff
+    &-xs
+      width: 51px
+      height: 47px
 
-    &_black
-      fill: #000000
+@include media-lg-min
+  .logo
+    &__icon
+      display: block
+
+      &-xs
+        display: none

@@ -17,55 +17,13 @@
 
   &__logo svg
       transition: fill .3s
-      fill: #ffffff
+      fill: #000
 
   &__back
     position: absolute
     left: 50%
     transform: translateX(-50%)
     color: #141414
-
-  &__menu
-    transition: background .3s
-
-    position: relative
-
-    background: #000
-    border: 1px solid #000
-    border-radius: 50%
-    cursor: pointer
-
-    span
-      transition: transform .3s, background .3s
-
-      display: block
-      position: absolute
-      top: 50%
-      left: 50%
-      width: 22px
-      height: 2px
-      margin-left: -11px
-
-      background: #ffffff
-
-      &:first-child
-        transform: translateY(-5px)
-
-      &:last-child
-        transform: translateY(5px)
-
-
-    &.is-active
-      background: transparent
-
-      span
-        background: #000000
-
-        &:first-child
-          transform: rotate(45deg)
-
-        &:last-child
-          transform: rotate(-45deg)
 
   &_home
     background: transparent
@@ -74,7 +32,7 @@
         padding: 30px 0
 
       &__logo svg
-        fill: #000
+        fill: #fff
 
   &.is-scroll
     background: #ffffff
@@ -83,31 +41,5 @@
       &__inner
         padding: 10px 0
 
-      &__logo
+      &__logo svg
         fill: #000
-
-
-@include media-xl-max
-  .header__menu
-    width: 50px
-    height: 50px
-    min-width: 50px
-    min-height: 50px
-
-    span
-      width: 18px
-      margin-left: -9px
-
-      &:first-child
-        transform: translateY(-4px)
-
-      &:last-child
-        transform: translateY(4px)
-
-
-@include media-xl-min
-  .header__menu
-    width: 60px
-    height: 60px
-    min-width: 60px
-    min-height: 60px

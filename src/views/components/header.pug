@@ -3,8 +3,12 @@ mixin header(string)
         .container-fluid
             .header__inner
                 .header__logo.logo
-                    svg.logo__icon
-                        use( xlink:href=sprite('logo') )
+                    a(href="/")
+                        svg.logo__icon
+                            use( xlink:href=require('../img/icons/logo.svg') + '#ico' )
+
+                        svg.logo__icon-xs
+                            use( xlink:href=require('../img/icons/logo-symbol.svg') + '#ico' )
 
                 if routeActive('service-furniture') || routeActive('service-light') || routeActive('service-decor')
                     a(href=route('services')).header__back
@@ -20,9 +24,29 @@ mixin header(string)
                             .btn-arrow-text__arrow
                                 i.icon-arrow-left
 
-                .header__menu#header-menu-btn
+                .header__menu.btn-close.header-menu-btn
                     span
                     span
 
 
     .menu
+        .menu__inner
+            .menu__close.btn-close.header-menu-btn
+                span
+                span
+
+            nav.menu__nav
+                ul
+                    li( class=routeActive('index') ? 'is-active':'' )
+                        a( href='/' ) Главная
+
+                    li( class=routeActive('cases') ? 'is-active': '' )
+                        a( href=route('cases') ) Работы
+
+                    li( class=routeActive('services') ? 'is-active': '' )
+                        a( href=route('services') ) Услуги
+
+                    li( class=routeActive('contacts') ? 'is-active': '' )
+                        a( href=route('contacts') ) Контакты
+
+    .menu-backdrop

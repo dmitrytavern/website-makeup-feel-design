@@ -43,12 +43,6 @@
 
         @include un-margin-vertical
 
-  &__image
-    position: absolute
-    top: 17%
-    left: 18.6%
-    width: 82.5%
-
   &__container
     position: absolute
     top: 0
@@ -77,6 +71,15 @@
     a
       color: #fff
 
+  &__mouse
+    position: absolute
+    bottom: 30px
+    left: 50%
+    transform: translateX(-50%)
+    width: 20px
+    height: 28px
+    fill: #ffffff
+
 @include media-sm-min
   .intro
     &__background
@@ -85,11 +88,7 @@
           margin: 0 125px
 
 @include media-xl-min
-  .intro__social-media
-    bottom: 60px
-
-@include media-xx-min
   .intro
-    &__background
-      &-lines
-        display: none
+    &__social-media,
+    &__mouse
+      bottom: 60px

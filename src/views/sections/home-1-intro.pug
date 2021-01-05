@@ -1,7 +1,11 @@
 section.intro
     .intro__background
         .intro__background-inner
-            img.intro__background-image( src=require('../../img/section-intro-bg.jpg') alt="" )
+            picture
+                source( srcset=require('../../img/header-bg-lg.jpg') media="(min-width: 1024px)" )
+                source( srcset=require('../../img/header-bg-sm.jpg') media="(min-width: 578px)" )
+                img.intro__background-image( src=require('../../img/header-bg-xs.jpg') alt="" )
+
             .intro__background-lines
                 span
                 span
@@ -9,7 +13,7 @@ section.intro
                 span
                 span
 
-    img.intro__image( src=require('../../img/image-titles/image-title-interior.png') alt="Interior" )
+    object.intro__mouse( type="image/svg+xml" data=require('../../img/icons/mouse.svg') )
 
     .container-fluid.intro__container
         .intro__inner

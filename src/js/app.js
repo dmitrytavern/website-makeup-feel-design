@@ -7,7 +7,7 @@ $(document).ready(function () {
 //  Header
 
 const $header           = $('header')
-const $headerMenuBtn    = $('#header-menu-btn')
+const $headerMenuBtn    = $('.header-menu-btn')
 const $menu             = $('.menu')
 
 const $btnChatContainer = $('#chat-container')
@@ -63,14 +63,6 @@ function scrollPage() {
             }
         }
     }
-
-
-
-    /*
-    setTimeout(function () {
-        if (window.innerWidth < 992) $menu.css('padding-top', $header.outerHeight(true))
-    }, 300)
-    */
 }
 
 
@@ -80,6 +72,23 @@ function toggleHeaderMenu() {
     $menu.toggleClass('is-open')
     document.body.classList.toggle('menu-opened')
 }
+
+function closeHeaderMenu() {
+    $headerMenuBtn.removeClass('is-active')
+    $header.removeClass('is-menu-open')
+    $menu.removeClass('is-open')
+    document.body.classList.remove('menu-opened')
+}
+
+$(window).on('click', function (e) {
+    const $target = e.target
+    const click = $('.menu')[0].contains($target)
+    const containsClass = $target.classList.contains('header-menu-btn')
+
+    if (!(click || containsClass)) {
+        closeHeaderMenu()
+    }
+})
 
 $($headerMenuBtn).on('click', toggleHeaderMenu)
 $(window).on('resize scroll load', scrollPage)

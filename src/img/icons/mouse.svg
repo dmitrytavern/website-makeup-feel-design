@@ -1,0 +1,35 @@
+<svg id="ico" width="20" height="28" fill="#fff" viewBox="0 0 20 28" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        rect {
+            -webkit-animation: 1s ease-in-out 0s infinite alternate move;
+            animation: 1s ease-in-out 0s infinite alternate move
+        }
+
+        @-webkit-keyframes move {
+            from {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            to {
+                -webkit-transform: translateY(10px);
+                transform: translateY(10px);
+            }
+        }
+
+        @keyframes move {
+            from {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            to {
+                -webkit-transform: translateY(10px);
+                transform: translateY(10px);
+            }
+        }
+    </style>
+
+    <path d="M9.72517 0.25C4.38603 0.25 0.0424805 4.66182 0.0424805 10.0844V17.9158C0.0424805 23.3385 4.38603 27.75 9.72517 27.75C15.064 27.75 19.4079 23.3518 19.4079 17.9459V10.0844C19.4079 4.66182 15.064 0.25 9.72517 0.25ZM17.5866 17.9459C17.5866 22.3478 14.0602 25.9288 9.72517 25.9288C5.39043 25.9288 1.86371 22.3341 1.86371 17.9156V10.0844C1.86371 5.66589 5.39043 2.07118 9.72517 2.07118C14.0602 2.07118 17.5866 5.66589 17.5866 10.0844V17.9459Z"/>
+    <rect x="8" y="6.5" width="3.75" height="3.75" rx="1.875"/>
+</svg>
