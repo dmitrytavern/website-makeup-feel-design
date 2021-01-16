@@ -15,18 +15,6 @@
         },
         {
             id: 2,
-            name: 'Rivera Village',
-            desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
-                    'вступительной речи. Произведение искусства плюс безупречная функция\n' +
-                    'вот где ты можешь по настоящему почувствовать дизайн.',
-            preview: require('../../img/collections/collection-img-2.png'),
-            slides: [
-                require('../../img/collections/collection-img-slide-1.png'),
-                require('../../img/collections/collection-img-slide-1.png')
-            ]
-        },
-        {
-            id: 3,
             name: 'Creative City',
             desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
@@ -38,18 +26,7 @@
             ]
         },
         {
-            id: 4,
-            name: 'Загаловок Коллекции',
-            desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
-                    'вступительной речи. Произведение искусства плюс безупречная функция\n' +
-                    'вот где ты можешь по настоящему почувствовать дизайн.',
-            preview: require('../../img/collections/collection-img-4.png'),
-            slides: [
-                require('../../img/collections/collection-img-slide-1.png'),
-            ]
-        },
-        {
-            id: 5,
+            id: 3,
             name: 'Простая Коллекция',
             desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
@@ -61,7 +38,19 @@
             ]
         },
         {
-            id: 6,
+            id: 4,
+            name: 'Rivera Village',
+            desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                    'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                    'вот где ты можешь по настоящему почувствовать дизайн.',
+            preview: require('../../img/collections/collection-img-2.png'),
+            slides: [
+                require('../../img/collections/collection-img-slide-1.png'),
+                require('../../img/collections/collection-img-slide-1.png')
+            ]
+        },
+        {
+            id: 5,
             name: 'Легкая Коллекция',
             desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
@@ -71,7 +60,18 @@
                 require('../../img/collections/collection-img-slide-1.png'),
                 require('../../img/collections/collection-img-slide-1.png')
             ]
-        }
+        },
+        {
+            id: 6,
+            name: 'Загаловок Коллекции',
+            desc: 'Качественный дизайн мебели не нуждается в презентации. Садясь в кресло ты растворяешься и для этого не требуется\n' +
+                    'вступительной речи. Произведение искусства плюс безупречная функция\n' +
+                    'вот где ты можешь по настоящему почувствовать дизайн.',
+            preview: require('../../img/collections/collection-img-4.png'),
+            slides: [
+                require('../../img/collections/collection-img-slide-1.png'),
+            ]
+        },
     ]
 
 section.collections
@@ -82,7 +82,7 @@ section.collections
             ul.collections__list
 
                 each collection in collections
-                    li.collections__collection.collection
+                    li.collection
                         a( href="#" data-toggle="modal" data-target='#service-collection-modal-' + collection.id ).collection__link
                             .collection__inner
                                 img.collection__image( src=collection.preview alt="")
@@ -93,35 +93,35 @@ section.collections
                                         .btn-arrow-text__arrow.is-right
                                             i.icon-arrow-right
 
-                    .collection__modal.collection-modal(id="service-collection-modal-" + collection.id data-id-collection=collection.id data-send="false")
-                        .collection-modal__wrapper
-                            .container
-                                .collection-modal__inner
-                                    a( href="#" data-dismiss="modal" ).collection-modal__close
-                                        span Закрыть
-                                        i.icon-close
+                        .collection__modal.collection-modal(id="service-collection-modal-" + collection.id data-id-collection=collection.id data-send="false")
+                            .collection-modal__wrapper
+                                .container
+                                    .collection-modal__inner
+                                        a( href="#" data-dismiss="modal" ).collection-modal__close
+                                            span Закрыть
+                                            i.icon-close
 
-                                    h6.collection-modal__title #{collection.name}
-                                    p.collection-modal__desc #{collection.desc}
+                                        h6.collection-modal__title #{collection.name}
+                                        p.collection-modal__desc #{collection.desc}
 
-                                    .swiper-container.collection-modal__slider
-                                        .swiper-wrapper
-                                            each slide in collection.slides
-                                              .swiper-slide.collection-modal__slider-slide
-                                                  img( src=slide alt="" )
+                                        .swiper-container.collection-modal__slider
+                                            .swiper-wrapper
+                                                each slide in collection.slides
+                                                  .swiper-slide.collection-modal__slider-slide
+                                                      img( src=slide alt="" )
 
-                                        .collection-modal__slider-arrows
-                                            .collection-modal__slider-arrow.slider__arrow.swiper-button-prev
-                                                i.icon-arrow-left
+                                            .collection-modal__slider-arrows
+                                                .collection-modal__slider-arrow.slider__arrow.swiper-button-prev
+                                                    i.icon-arrow-left
 
-                                            .collection-modal__slider-arrow.slider__arrow.swiper-button-next
-                                                i.icon-arrow-right
+                                                .collection-modal__slider-arrow.slider__arrow.swiper-button-next
+                                                    i.icon-arrow-right
 
-                                        .slider__pagination.collection-modal__slider-pagination
+                                            .slider__pagination.collection-modal__slider-pagination
 
 
-                                    .collection-modal__btn-wrapper
-                                        .collection-modal__btn.btn.btn-primary-outline( data-toggle="modal" data-target="#modal-order-collection" ) Заказать
+                                        .collection-modal__btn-wrapper
+                                            .collection-modal__btn.btn.btn-primary-outline( data-toggle="modal" data-target="#modal-order-collection" ) Заказать
 
 
             .collections__btn-wrapper

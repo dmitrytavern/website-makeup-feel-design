@@ -9,7 +9,7 @@ mixin footer()
                         nav.footer__nav
                             ul
                                 li( class=routeActive('services') ? 'is-active': '' )
-                                    a( href=route('services') ) Усуги
+                                    a( href=route('services') ) Услуги
 
                                 li( class=routeActive('cases') ? 'is-active': '' )
                                     a( href=route('cases') ) Работы
@@ -18,7 +18,7 @@ mixin footer()
                                     a( href=route('contacts') ) Контакты
 
                     .footer__social-media-col.col-md-3.col-lg-2
-                        ul.footer__social-media.social-media.social-media_horizontal
+                        ul.footer__social-media.social-media.social-media_horizontal.social-media_filled
                             li
                                 a.icon-behance( href="#" target="_blank" rel="noopener" )
 
@@ -37,7 +37,7 @@ mixin footer()
 
                     .footer__contacts
                         a.footer__contact( href="tel:+74957557983" ) +7 495 75 57 983
-                        ul.footer__social-media.footer__social-media-contacts.social-media.social-media_horizontal
+                        ul.footer__social-media.footer__social-media-contacts.social-media.social-media_horizontal.social-media_filled
                             li
                                 a.icon-behance( href="#" target="_blank" rel="noopener" )
 

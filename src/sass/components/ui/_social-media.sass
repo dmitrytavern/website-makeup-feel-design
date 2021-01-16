@@ -3,16 +3,20 @@
     display: block
     font-size: 22px
     color: #141414
+    padding: 4px
 
-    &:hover
-      color: #B19990
+  &_filled a:hover
+    color: #B19990
+
+  &_outline a:hover
+    color: #000
 
   &_horizontal
     li
       @include un-margin-horizontal
 
       display: inline-block
-      margin: 0 13px
+      margin: 0 9px
 
   &_vertical
 
@@ -20,4 +24,4 @@
       @include un-margin-vertical
 
       display: block
-      margin: 25px 0
+      margin: 21px 0

@@ -6,10 +6,18 @@
     padding-top: 42px
 
   &__name
+    display: inline-block
     text-transform: uppercase
 
     a
       color: #141414
+
+    &:hover
+      a
+        color: #6E6C6B
+
+      ~ .case__arrow-wrapper .btn-arrow:before
+        width: 102px
 
   &__line
     display: block
@@ -29,7 +37,7 @@
       justify-content: flex-end
 
 
-@include media-lg-max
+@include media-xs
   .case
     &__image
       margin-left: -20px

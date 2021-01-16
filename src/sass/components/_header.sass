@@ -25,16 +25,11 @@
     transform: translateX(-50%)
     color: #141414
 
-  &_home
-    background: transparent
-    .header
-      &__inner
-        padding: 30px 0
+    .btn-arrow-text:hover
+      padding-left: 16px
+      padding-right: 16px
 
-      &__logo svg
-        fill: #fff
-
-  &.is-scroll
+  &.is-scroll:not(&_home)
     background: #ffffff
 
     .header
@@ -43,3 +38,34 @@
 
       &__logo svg
         fill: #000
+
+
+  &_home
+    position: absolute
+    background: transparent
+
+    .header
+      &__inner
+        min-height: 110px
+        padding: 30px 0
+
+      &__logo svg
+        fill: #fff
+
+    &.is-scroll
+      .header
+        &__menu
+          position: fixed
+          top: 30px
+          right: 20px
+
+          @include media-xl-min
+            right: 70px
+
+          @include media-xx-min
+            right: 100px
+
+@include media-xl-min
+  .header_home
+    .header__inner
+      min-height: 120px

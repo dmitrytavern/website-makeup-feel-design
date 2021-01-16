@@ -12,13 +12,20 @@
 
     &-arrows
       position: absolute
-      right: 112px
-      bottom: 44px
+      left: 50%
+      bottom: 24px
+      transform: translateX(-50%)
       z-index: 1
+
+    &-pagination
+      display: none
 
 @include media-lg-max
   .home-cases
     &__slider
+      &-pagination
+        display: flex
+
       &-arrows
         display: none
 
@@ -44,6 +51,5 @@
     &__slider
       &-arrows
         position: absolute
-        right: 70px
 
 @import "home-3-cases/home-cases-desc"

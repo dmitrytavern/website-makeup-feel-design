@@ -11,9 +11,14 @@
     margin-bottom: 23px
 
   &__name
+    display: inline-block
     line-height: 1em
     color: #141414
     text-transform: uppercase
+    cursor: pointer
+
+    &:hover ~ .home-cases-desc__arrow-wrapper .btn-arrow:before
+      width: 102px
 
   &__line
     display: block

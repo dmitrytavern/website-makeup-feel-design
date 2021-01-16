@@ -7,7 +7,15 @@
     flex: 1
 
   &__name
+    display: inline-block
     color: #141414
+    cursor: pointer
+
+    &:hover
+      color: #6E6C6B
+
+      ~ .service__arrow-wrapper .btn-arrow:before
+        width: 102px
 
   &__line
     display: block

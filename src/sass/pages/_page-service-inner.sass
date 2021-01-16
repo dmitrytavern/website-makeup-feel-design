@@ -14,14 +14,14 @@
     &-title
       position: absolute
       left: 10px
-      bottom: -0.45em
+      bottom: -0.433em
 
       font-family: 'Gotham Pro', sans-serif
       font-weight: bold
       color: #141414
       line-height: 1em
 
-      @include make-font-size(72, 270, 480, 2000)
+      @include make-font-size(72, 330, 480, 2400)
 
 @include media-lg-max
   .page-service-inner
@@ -51,6 +51,10 @@
   .page-service-inner
     &__head
       margin-bottom: 155px
+
+      &-image img
+        max-height: 79vh
+        object-fit: cover
 
 @include media-xx-min
   .page-service-inner

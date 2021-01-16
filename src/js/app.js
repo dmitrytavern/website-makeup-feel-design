@@ -2,6 +2,7 @@ import '../sass/app.sass'
 
 $(document).ready(function () {
     document.body.classList.add('is-loaded')
+    $('.menu').addClass('is-loaded')
 })
 
 //  Header
@@ -85,7 +86,7 @@ $(window).on('click', function (e) {
     const click = $('.menu')[0].contains($target)
     const containsClass = $target.classList.contains('header-menu-btn')
     let containsSpan = false
-    if ($target.offsetParent.classList) {
+    if ($target.offsetParent && $target.offsetParent.classList) {
         containsSpan = $target.offsetParent.classList.contains('header-menu-btn')
     }
 
@@ -240,6 +241,7 @@ if ($caseColorBoxes.length !== 0) {
 }
 
 
+
 // Forms
 
 const $contactsPageTextarea = $('textarea.input-block__input')
@@ -364,6 +366,30 @@ if ($modalOrderForm.length !== 0) {
                   }, 3000)
               })
         }
+    })
+}
+
+
+// View collection
+const $collectionBlock = $('.collections')
+const $collectionList = $('.collections__list')
+
+if ($collectionBlock.length !== 0) {
+    // If need to load new image, run recalculate function
+    const collectionInterface = Macy({
+        container: '.collections__list',
+        margin: 19,
+        columns: 3,
+        breakAt: {
+            1025: {
+                margin: 13,
+                columns: 2
+            }
+        }
+    })
+
+    $(window).on("resize", function () {
+        collectionInterface.recalculate(true, true)
     })
 }
 

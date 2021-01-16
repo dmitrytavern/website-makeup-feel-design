@@ -1,17 +1,25 @@
 .menu
-  transition: .3s transform
   position: fixed
   top: 0
   bottom: 0
   right: 0
   transform: translateX(100%)
   z-index: 110
+  opacity: 0
 
-  background-color: rgba(235, 235, 235, 0.9)
-  backdrop-filter: blur(50px)
+  background-color: rgba(#d3d3d3, 0.6)
+  backdrop-filter: blur(12px)
 
   @supports not (backdrop-filter: blur(50px))
-    background-color: rgba(235, 235, 235, 1)
+    background-color: rgba(#d3d3d3, 1)
+
+  &.is-loaded
+    transition: .3s transform ease 0s, opacity 0s ease .3s
+
+  &.is-open
+    transition: .3s transform ease 0s, opacity 0s ease 0s
+    transform: translateX(0)
+    opacity: 1
 
   &-backdrop
     position: absolute
@@ -84,10 +92,6 @@
 
       &:hover:before
         width: 100%
-
-
-  &.is-open
-    transform: translateX(0)
 
 @include media-sm-max
   .menu
