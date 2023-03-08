@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = function (config) {
 	const sassRuleDev = {
@@ -62,16 +62,19 @@ module.exports = function (config) {
 	]
 
 	const minimizer = [
-		new OptimizeCssAssetsPlugin({
-			assetNameRegExp: /\.min\.css$/g,
-			cssProcessor: require('cssnano'),
-			cssProcessorPluginOptions: {
-				preset: ['default', { discardComments: { removeAll: true } }],
-			},
-			canPrint: true
+		new CssMinimizerPlugin({
+			include: /\.min\.css$/g,
+			minimizerOptions: [
+				{
+					preset: ['default', { discardComments: { removeAll: true } }]
+				},
+			],
+			minify: [
+				CssMinimizerPlugin.cssnanoMinify,
+				CssMinimizerPlugin.cleanCssMinify,
+			],
 		})
 	]
-
 
 	if (config.devMode) {
 		// Dev mode
