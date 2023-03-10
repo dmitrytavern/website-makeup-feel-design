@@ -3,7 +3,7 @@ mixin header(string)
         .container-fluid
             .header__inner
                 .header__logo.logo
-                    a(href="/")
+                    a(href=route('index'))
                         svg.logo__icon
                             use( xlink:href=require('../img/icons/logo.svg') + '#ico' )
 
@@ -38,7 +38,7 @@ mixin header(string)
             nav.menu__nav
                 ul
                     li( class=routeActive('index') ? 'is-active':'' )
-                        a( href='/' ) Главная
+                        a( href=route('index') ) Главная
 
                     li( class=routeActive('cases') ? 'is-active': '' )
                         a( href=route('cases') ) Работы

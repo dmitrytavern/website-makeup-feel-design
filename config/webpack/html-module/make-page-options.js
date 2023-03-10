@@ -25,7 +25,7 @@ module.exports = function (config, page) {
 
 			route(url) {
 				const name = url.match(/\.html/) ? url : url+'.html'
-				return join(name)
+				return join(process.env.APP_PUBLIC_PATH, name)
 			},
 
 			routeActive: function (route) {
@@ -33,7 +33,7 @@ module.exports = function (config, page) {
 			},
 
 			sprite: function (id) {
-				return 'img/sprite.svg#ico-' + id
+				return join(process.env.APP_PUBLIC_PATH, 'img/sprite.svg#ico-' + id)
 			},
 
 			scriptPageExists: function () {

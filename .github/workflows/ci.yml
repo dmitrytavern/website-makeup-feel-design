@@ -1,0 +1,74 @@
+name: Release
+
+env:
+  ARCHIVE_NAME: website-makeup.tar.gz
+  SCREENSHOT_NAME: screenshot.png
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: Create makeup release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: Install chrome
+        working-directory: ${{ github.workspace }}
+        run: |
+          sudo apt-get install libxss1 libappindicator1 libindicator7
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome*.deb
+          sudo apt-get install -f
+
+      - name: Install screenshoter
+        working-directory: ${{ github.workspace }}
+        run: npm i -g @dmitrytavern/website-screenshoter
+
+      - name: Install dependencies
+        working-directory: ${{ github.workspace }}
+        run: npm ci
+
+      - name: Build website
+        working-directory: ${{ github.workspace }}
+        run: npm run build
+
+      - name: Compress build
+        working-directory: ${{ github.workspace }}
+        run: tar czvf ./${{ env.ARCHIVE_NAME }} ./dist/*
+
+      - name: Start serve
+        shell: bash
+        run: |
+          (npm run build:serve&)
+          sleep 4s
+
+      - name: Take screenshot
+        working-directory: ${{ github.workspace }}
+        run: website-screenshoter --url http://localhost:3001 --w 1920 --h 1080 --fullpage false --file ${{ github.workspace }}/${{ env.SCREENSHOT_NAME }}
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body: Release.
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            ${{ github.workspace }}/${{ env.ARCHIVE_NAME }}
+            ${{ github.workspace }}/${{ env.SCREENSHOT_NAME }}

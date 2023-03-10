@@ -2,6 +2,8 @@ const { join } = require('path')
 
 require('dotenv').config()
 
+process.env.APP_PUBLIC_PATH = process.env.APP_PUBLIC_PATH ? process.env.APP_PUBLIC_PATH : '/' 
+
 const configurations = {
 	devMode: process.env.NODE_ENV === 'development',
 	routes: {

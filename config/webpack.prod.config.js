@@ -14,7 +14,7 @@ module.exports = {
 				return `js/${process.env.BUILD_FILENAME_JS}.js`
 			}
 		},
-		publicPath: ''
+		publicPath: process.env.APP_PUBLIC_PATH
 	},
 	module: {
 		rules: config.webpack.rules,

@@ -1,9 +1,4 @@
 {
-  "name": "feel-design",
-  "version": "0.0.0",
-  "description": "Site",
-  "author": "dogger",
-  "license": "ISC",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.5.3",
