@@ -1,4 +1,4 @@
-# Makeup of Didit landing
+# Makeup of Feel Design
 
 Makeup of a simple website-brochure on the topic of interior design.
 
@@ -11,9 +11,8 @@ Makeup of a simple website-brochure on the topic of interior design.
 
 ## Features
 
-- Webpack builder
-- Bootstrap gird
 - BEM naming
+- Webpack builder
 - Responsive layout for 1600px, 1100px, 768px, 375px
 
 ## How to build?
