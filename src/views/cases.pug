@@ -9,8 +9,10 @@ block content
             h1.page-title.page-cases__title Портфолио
 
         picture.page-cases__image
+            source( srcset=require('../img/image-titles/image-title-cases-lg.webp'), media="(min-width: 1024px)" type='image/webp' )
             source( srcset=require('../img/image-titles/image-title-cases-lg.png') media="(min-width: 1024px)" )
-            img( src=require('../img/image-titles/image-title-cases-xs.png') alt="")
+            source( srcset=require('../img/image-titles/image-title-cases-xs.webp'), type='image/webp' )
+            img( src=require('../img/image-titles/image-title-cases-xs.png') alt="" width="458px" height="112px" )
 
         section.cases
             .container
@@ -19,7 +21,9 @@ block content
                     article.cases__case.case
                         .case__inner
                             a(href=route('case')).case__image
-                                img( src=require('../img/cases/cases-case-1.png') alt="RIVERA VILLAGE" )
+                                picture
+                                    source( srcset=require('../img/cases/cases-case-1.webp'), type='image/webp' )
+                                    img( src=require('../img/cases/cases-case-1.png') alt="RIVERA VILLAGE" width="414px" height="234px" )
 
                             .case__content
                                 h4.case__name
@@ -33,7 +37,9 @@ block content
                     article.cases__case.case.case_revert
                         .case__inner
                             a(href=route('case')).case__image
-                                img( src=require('../img/cases/cases-case-2.png') alt="RIVERA VILLAGE" )
+                                picture
+                                    source( srcset=require('../img/cases/cases-case-1.webp'), type='image/webp' )
+                                    img( src=require('../img/cases/cases-case-2.png') alt="RIVERA VILLAGE" )
 
                             .case__content
                                 h4.case__name
@@ -48,7 +54,9 @@ block content
                     article.cases__case.case
                         .case__inner
                             a(href=route('case')).case__image
-                                img( src=require('../img/cases/cases-case-3.png') alt="RIVERA VILLAGE" )
+                                picture
+                                    source( srcset=require('../img/cases/cases-case-1.webp'), type='image/webp' )
+                                    img( src=require('../img/cases/cases-case-3.png') alt="RIVERA VILLAGE" )
 
                             .case__content
                                 h4.case__name
@@ -62,7 +70,9 @@ block content
                     article.cases__case.case.case_revert
                         .case__inner
                             a(href=route('case')).case__image
-                                img( src=require('../img/cases/cases-case-4.png') alt="RIVERA VILLAGE" )
+                                picture
+                                    source( srcset=require('../img/cases/cases-case-1.webp'), type='image/webp' )
+                                    img( src=require('../img/cases/cases-case-4.png') alt="RIVERA VILLAGE" )
 
                             .case__content
                                 h4.case__name

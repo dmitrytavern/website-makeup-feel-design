@@ -27,4 +27,6 @@ section.case-description
                         словно солнце пробивающееся сквозь поверхность океана. <br/>
 
                 .case-description__image
-                    img( src=require('../../img/case/case-inner-stone.jpg') alt="" )
+                    picture
+                        source( srcset=require('../../img/case/case-inner-stone.webp'), type='image/webp' )
+                        img( src=require('../../img/case/case-inner-stone.jpg') alt="" width="375px" height="252px" )

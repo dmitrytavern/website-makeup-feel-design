@@ -2,9 +2,12 @@
     .intro__background
         .intro__background-inner
             picture
+                source( srcset=require('../../img/header-bg-lg.webp'), media="(min-width: 1024px)" type='image/webp' )
                 source( srcset=require('../../img/header-bg-lg.jpg') media="(min-width: 1024px)" )
+                source( srcset=require('../../img/header-bg-sm.webp'), media="(min-width: 578px)" type='image/webp' )
                 source( srcset=require('../../img/header-bg-sm.jpg') media="(min-width: 578px)" )
-                img.intro__background-image( src=require('../../img/header-bg-xs.jpg') alt="" )
+                source( srcset=require('../../img/header-bg-xs.webp'), type='image/webp' )
+                img.intro__background-image( src=require('../../img/header-bg-xs.jpg') alt="" width="414px" height="620px" )
 
             .intro__background-lines
                 span
@@ -19,12 +22,12 @@
         .intro__inner
             ul.intro__social-media.social-media.social-media_vertical.social-media_outline
                 li
-                    a.icon-behance-simple( href="#" target="_blank" rel="noopener" )
+                    a.icon-behance-simple( href="#" target="_blank" rel="noopener" aria-label="Go to behance" )
                         span.path1
                         span.path2
 
                 li
-                    a.icon-facebook-simple( href="#" target="_blank" rel="noopener" )
+                    a.icon-facebook-simple( href="#" target="_blank" rel="noopener" aria-label="Go to facebook" )
 
                 li
-                    a.icon-instagram-simple( href="#" target="_blank" rel="noopener" )
+                    a.icon-instagram-simple( href="#" target="_blank" rel="noopener" aria-label="Go to instagram" )

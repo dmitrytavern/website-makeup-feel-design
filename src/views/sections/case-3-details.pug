@@ -30,12 +30,16 @@ section.case-details
                             span Пешеходный маршрут
 
                 .case-detail-plan__image
-                    img( src=require('../../img/case/case-inner-plan.jpg') alt="" )
+                    picture
+                        source( srcset=require('../../img/case/case-inner-plan.webp'), type='image/webp' )
+                        img( src=require('../../img/case/case-inner-plan.jpg') alt="" width="375px" height="380px" )
 
     .container
         .case-details__interior.case-detail-interior
             p.page-case__text В дизайн проекте продумана каждая деталь от плана экспликации до декора на столиках в баре-ресторане.
-            img.page-case__image( src=require('../../img/case/case-inner-img-1.png') alt="" )
+            picture
+                source( srcset=require('../../img/case/case-inner-img-1.webp'), type='image/webp' )
+                img.page-case__image( src=require('../../img/case/case-inner-img-1.png') alt="" width="375px" height="240px" )
 
     .case-details__cinema.case-detail-cinema
         .container
@@ -50,23 +54,34 @@ section.case-details
 
                     .case-detail-cinema__mini-image
                         p Боковая проекция
-                        img( src=require('../../img/case/case-inner-cupol-2.png') alt="" )
+
+                        picture
+                            source( srcset=require('../../img/case/case-inner-cupol-2.webp'), type='image/webp' )
+                            img( src=require('../../img/case/case-inner-cupol-2.png') alt="" width="320px" height="235px" )
 
                 .case-detail-cinema__image
-                    img( src=require('../../img/case/case-inner-cupol-1.jpg') alt="" )
+                    picture
+                        source( srcset=require('../../img/case/case-inner-cupol-1.webp'), type='image/webp' )
+                        img( src=require('../../img/case/case-inner-cupol-1.jpg') alt="" width="375px" height="217px" )
 
     .container
         .case-details__slider.case-detail-slider
             .swiper-container.case-detail-slider__slider
                 .swiper-wrapper.case-detail-slider__wrapper
                     .swiper-slide.case-detail-slider__slide
-                        img( src=require('../../img/case/case-inner-img-2.jpg') alt="")
+                        picture
+                            source( srcset=require('../../img/case/case-inner-img-2.webp'), type='image/webp' )
+                            img( src=require('../../img/case/case-inner-img-2.jpg') alt="" width="283px" height="180px" )
 
                     .swiper-slide.case-detail-slider__slide
-                        img( src=require('../../img/case/case-inner-img-1.png') alt="")
+                        picture
+                            source( srcset=require('../../img/case/case-inner-img-1.webp'), type='image/webp' )
+                            img( src=require('../../img/case/case-inner-img-1.png') alt="" width="283px" height="180px" )
 
                     .swiper-slide.case-detail-slider__slide
-                        img( src=require('../../img/case/case-inner-img-2.jpg') alt="")
+                        picture
+                            source( srcset=require('../../img/case/case-inner-img-2.webp'), type='image/webp' )
+                            img( src=require('../../img/case/case-inner-img-2.jpg') alt="" width="283px" height="180px" )
 
                 div.case-detail-slider__arrows
                     .case-detail-slider__arrow.slider__arrow.swiper-button-prev

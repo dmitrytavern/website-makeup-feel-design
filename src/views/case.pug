@@ -7,7 +7,9 @@ block content
     main.page-case
 
         .page-case__head
-            img.page-case__head-image( src=require('../img/case-header-bg.png') alt="" )
+            picture
+                source( srcset=require('../img/case-header-bg.webp'), type='image/webp' )
+                img.page-case__head-image( src=require('../img/case-header-bg.png') alt="" width="414px" height="191px" )
             .container
                 h1.page-case__head-title Ocean ecology museum
 

@@ -1,9 +1,13 @@
 section.home-section.logical
     picture.logical__title-image( data-home-section-parallax )
+        source( srcset=require('../../img/image-titles/image-title-eco-lg.webp'), media="(min-width: 1024px)" type='image/webp' )
         source( srcset=require('../../img/image-titles/image-title-eco-lg.png') media="(min-width: 1024px)" )
-        img( src=require('../../img/image-titles/image-title-eco-xs.png') alt="" )
+        source( srcset=require('../../img/image-titles/image-title-eco-xs.webp'), type='image/webp' )
+        img( src=require('../../img/image-titles/image-title-eco-xs.png') alt="" width="251px" height="113px" )
 
-    img.logical__image( src=require('../../img/section-eco-bg.png') alt="" )
+    picture
+        source( srcset=require('../../img/section-eco-bg.webp'), type='image/webp' )
+        img.logical__image( src=require('../../img/section-eco-bg.png') alt="" width="263px" height="465px" )
 
     .container
         .home-section__inner.logical__inner

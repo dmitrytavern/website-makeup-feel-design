@@ -5,10 +5,14 @@ block title
 
 block content
     main.page-contacts
-        img.page-contacts__image-title( src=require('../img/image-titles/image-title-contacts-lg.png') alt="" )
+        picture
+            source( srcset=require('../img/image-titles/image-title-contacts-lg.webp'), type='image/webp' )
+            img.page-contacts__image-title( src=require('../img/image-titles/image-title-contacts-lg.png') alt="" width="475px" height="80px")
 
         section.contacts
-            img.page-contacts__image( src=require('../img/contacts-bg.png') alt="" )
+            picture
+                source( srcset=require('../img/contacts-bg.webp'), type='image/webp' )
+                img.page-contacts__image( src=require('../img/contacts-bg.png') alt="" width="365px" height="285px" )
 
             .container
                 .contacts__inner
@@ -45,13 +49,13 @@ block content
 
                         ul.contacts__link-group.social-media.social-media_horizontal.social-media_filled
                             li
-                                a.icon-behance( href="#" target="_blank" rel="noopener" )
+                                a.icon-behance( href="#" target="_blank" rel="noopener" aria-label="Go to behance" )
 
                             li
-                                a.icon-facebook( href="#" target="_blank" rel="noopener" )
+                                a.icon-facebook( href="#" target="_blank" rel="noopener" aria-label="Go to facebook" )
 
                             li
-                                a.icon-instagram( href="#" target="_blank" rel="noopener" )
+                                a.icon-instagram( href="#" target="_blank" rel="noopener" aria-label="Go to instagram" )
                                     span.path1
                                     span.path2
 

@@ -3,7 +3,7 @@ mixin header(string)
         .container-fluid
             .header__inner
                 .header__logo.logo
-                    a(href=route('index'))
+                    a(href=route('index') aria-label="Go to home")
                         svg.logo__icon
                             use( xlink:href=require('../img/icons/logo.svg') + '#ico' )
 

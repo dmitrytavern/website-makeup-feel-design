@@ -8,8 +8,10 @@ block content
         .container-fluid
             .page-service-inner__head
                 picture.page-service-inner__head-image
+                    source( srcset=require('../img/services-inner/service-inner-lights-bg.webp'), media="(min-width: 1024px)" type='image/webp' )
                     source( srcset=require('../img/services-inner/service-inner-lights-bg.jpg')  media="(min-width: 1024px)" )
-                    img( src=require('../img/services-inner/service-inner-lights-bg-xs.jpg') alt="" )
+                    source( srcset=require('../img/services-inner/service-inner-lights-bg-xs.webp'), type='image/webp' )
+                    img( src=require('../img/services-inner/service-inner-lights-bg-xs.jpg') alt="" width="414px" height="190px" )
 
                 h1.page-service-inner__head-title Lights
 

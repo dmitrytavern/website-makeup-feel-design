@@ -5,13 +5,19 @@ section.home-section.home-cases
             .swiper-wrapper.home-cases__slider-wrapper
 
                 .swiper-slide.home-cases__slider-slide( data-name="Rivera Village" data-description="В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления." data-link=route('case') )
-                    img( src=require('../../img/cases/case-1.jpg') alt="Rivera Village")
+                    pictrue
+                        source( srcset=require('../../img/cases/case-1.webp'), type='image/webp' )
+                        img( src=require('../../img/cases/case-1.webp') alt="Rivera Village" width="414px" height="211px")
 
                 .swiper-slide.home-cases__slider-slide( data-name="Easy Village" data-description="Совершенствуй мир по средствам текстур и деталей" data-link=route('case') )
-                    img( src=require('../../img/cases/case-1.jpg') alt="Easy Village")
+                    pictrue
+                        source( srcset=require('../../img/cases/case-1.webp'), type='image/webp' )
+                        img( src=require('../../img/cases/case-1.webp') alt="Easy Village" width="414px" height="211px")
 
                 .swiper-slide.home-cases__slider-slide( data-name="Creative City" data-description="Человек будущего - живет в гармоничной среде. В основе всего этого - любовь к эстетике и преобразованию мира. Я верю в дизайн и отвергаю  культуру потребления." data-link=route('case') )
-                    img( src=require('../../img/cases/case-1.jpg') alt="Creative City")
+                    pictrue
+                        source( srcset=require('../../img/cases/case-1.webp'), type='image/webp' )
+                        img( src=require('../../img/cases/case-1.webp') alt="Creative City" width="414px" height="211px")
 
             .home-cases__slider-arrows.slider__arrows
                 .slider__arrow.swiper-button-prev
@@ -32,5 +38,5 @@ section.home-section.home-cases
                 Я верю в дизайн и отвергаю  культуру потребления.
 
             .home-cases-desc__arrow-wrapper
-                a.btn-arrow.home-cases-desc__arrow( href="#" data-link )
+                a.btn-arrow.home-cases-desc__arrow( href="#" data-link aria-label="Go to case inner page" )
                     i.icon-arrow-right

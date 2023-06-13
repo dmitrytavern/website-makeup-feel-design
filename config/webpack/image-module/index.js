@@ -2,7 +2,7 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = function (config) {
 	config.webpack.rules.push({
-		test: /\.(png|jpg|jpeg|gif|mp4|WebM|mp3|ogg)$/i,
+		test: /\.(png|jpg|jpeg|webp|gif|mp4|WebM|mp3|ogg)$/i,
 		type: 'asset/resource',
 		generator: {
 			filename: 'img/[name][ext]'

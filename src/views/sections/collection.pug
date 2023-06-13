@@ -1,4 +1,5 @@
 -
+    const slideWebp = require('../../img/collections/collection-img-slide-1.webp')
     const collections = [
         {
             id: 1,
@@ -7,6 +8,7 @@
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
                     'вот где ты можешь по настоящему почувствовать дизайн.',
             preview: require('../../img/collections/collection-img-1.png'),
+            previewWebp: require('../../img/collections/collection-img-1.webp'),
             slides: [
                 require('../../img/collections/collection-img-slide-1.png'),
                 require('../../img/collections/collection-img-slide-1.png'),
@@ -20,6 +22,7 @@
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
                     'вот где ты можешь по настоящему почувствовать дизайн.',
             preview: require('../../img/collections/collection-img-6.png'),
+            previewWebp: require('../../img/collections/collection-img-6.webp'),
             slides: [
                 require('../../img/collections/collection-img-slide-1.png'),
                 require('../../img/collections/collection-img-slide-1.png')
@@ -32,6 +35,7 @@
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
                     'вот где ты можешь по настоящему почувствовать дизайн.',
             preview: require('../../img/collections/collection-img-3.png'),
+            previewWebp: require('../../img/collections/collection-img-3.webp'),
             slides: [
                 require('../../img/collections/collection-img-slide-1.png'),
                 require('../../img/collections/collection-img-slide-1.png')
@@ -44,6 +48,7 @@
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
                     'вот где ты можешь по настоящему почувствовать дизайн.',
             preview: require('../../img/collections/collection-img-2.png'),
+            previewWebp: require('../../img/collections/collection-img-2.webp'),
             slides: [
                 require('../../img/collections/collection-img-slide-1.png'),
                 require('../../img/collections/collection-img-slide-1.png')
@@ -56,6 +61,7 @@
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
                     'вот где ты можешь по настоящему почувствовать дизайн.',
             preview: require('../../img/collections/collection-img-5.png'),
+            previewWebp: require('../../img/collections/collection-img-5.webp'),
             slides: [
                 require('../../img/collections/collection-img-slide-1.png'),
                 require('../../img/collections/collection-img-slide-1.png')
@@ -68,6 +74,7 @@
                     'вступительной речи. Произведение искусства плюс безупречная функция\n' +
                     'вот где ты можешь по настоящему почувствовать дизайн.',
             preview: require('../../img/collections/collection-img-4.png'),
+            previewWebp: require('../../img/collections/collection-img-4.webp'),
             slides: [
                 require('../../img/collections/collection-img-slide-1.png'),
             ]
@@ -85,7 +92,10 @@ section.collections
                     li.collection
                         a( href="#" data-toggle="modal" data-target='#service-collection-modal-' + collection.id ).collection__link
                             .collection__inner
-                                img.collection__image( src=collection.preview alt="")
+                                picture
+                                    source( srcset=collection.previewWebp.replace('.png', '.webp'), type='image/webp' )
+                                    img.collection__image( src=collection.preview alt="" width="180px" height="120px" )
+
                                 .collection__desc
                                     .collection__name #{collection.name}
                                     .collection__arrow.btn.btn-arrow-text
@@ -108,7 +118,9 @@ section.collections
                                             .swiper-wrapper
                                                 each slide in collection.slides
                                                   .swiper-slide.collection-modal__slider-slide
-                                                      img( src=slide alt="" )
+                                                    picture
+                                                        source( srcset=slide.replace('.png', '.webp'), type='image/webp' )
+                                                        img( src=slide alt="" width="375px" height="190px" )
 
                                             .collection-modal__slider-arrows
                                                 .collection-modal__slider-arrow.slider__arrow.swiper-button-prev

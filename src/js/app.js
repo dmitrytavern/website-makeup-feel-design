@@ -90,8 +90,6 @@ $(window).on('click', function (e) {
         containsSpan = $target.offsetParent.classList.contains('header-menu-btn')
     }
 
-    console.log($target)
-
     if (!(click || containsClass || containsSpan)) {
         closeHeaderMenu()
     }

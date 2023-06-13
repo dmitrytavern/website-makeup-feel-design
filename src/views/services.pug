@@ -9,8 +9,10 @@ block content
             h1.page-title.page-services__title Мои Услуги
 
         picture.page-services__image( data-services-parallax )
+            source( srcset=require('../img/image-titles/image-title-services-lg.webp'), media="(min-width: 1024px)" type='image/webp' )
             source( srcset=require('../img/image-titles/image-title-services-lg.png') media="(min-width: 1024px)" )
-            img( src=require('../img/image-titles/image-title-services-xs.png') alt="")
+            source( srcset=require('../img/image-titles/image-title-services-xs.webp'), type='image/webp' )
+            img( src=require('../img/image-titles/image-title-services-xs.png') alt="" width="545px" height="114px" )
 
         section.page-services__services.services
             .container
@@ -19,7 +21,9 @@ block content
                     article.services__service.service
                         .service__inner
                             .service__image
-                                img( src=require('../img/services/services-service-1.png') alt="" )
+                                picture
+                                    source( srcset=require('../img/services/services-service-1.webp'), type='image/webp' )
+                                    img( src=require('../img/services/services-service-1.png') alt="" width="375px" height="200px" )
 
                             .service__content
                                 a.service__name( href=route('service-furniture') )
@@ -41,7 +45,9 @@ block content
                     article.services__service.service
                         .service__inner
                             .service__image
-                                img( src=require('../img/services/services-service-1.png') alt="" )
+                                picture
+                                    source( srcset=require('../img/services/services-service-1.webp'), type='image/webp' )
+                                    img( src=require('../img/services/services-service-1.png') alt="" width="375px" height="200px" )
 
                             .service__content
                                 a.service__name( href=route('service-interior') )
@@ -65,7 +71,9 @@ block content
                     article.services__service.service
                         .service__inner
                             .service__image
-                                img( src=require('../img/services/services-service-1.png') alt="" )
+                                picture
+                                    source( srcset=require('../img/services/services-service-1.webp'), type='image/webp' )
+                                    img( src=require('../img/services/services-service-1.png') alt="" width="375px" height="200px" )
 
                             .service__content
                                 a.service__name( href=route('service-decor') )
@@ -89,7 +97,9 @@ block content
                     article.services__service.service
                         .service__inner
                             .service__image
-                                img( src=require('../img/services/services-service-1.png') alt="" )
+                                picture
+                                    source( srcset=require('../img/services/services-service-1.webp'), type='image/webp' )
+                                    img( src=require('../img/services/services-service-1.png') alt="" width="375px" height="200px" )
 
                             .service__content
                                 a.service__name( href=route('service-light') )
