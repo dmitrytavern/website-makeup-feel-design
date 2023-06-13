@@ -90,7 +90,6 @@ $(window).on('click', function (e) {
   if ($target.offsetParent && $target.offsetParent.classList) {
     containsSpan = $target.offsetParent.classList.contains('header-menu-btn');
   }
-  console.log($target);
   if (!(click || containsClass || containsSpan)) {
     closeHeaderMenu();
   }

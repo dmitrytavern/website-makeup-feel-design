@@ -24,7 +24,7 @@
     <header class="header">
       <div class="container-fluid">
         <div class="header__inner">
-          <div class="header__logo logo"><a href="/website-makeup-feel-design/index.html">
+          <div class="header__logo logo"><a href="/website-makeup-feel-design/index.html" aria-label="Go to home">
               <svg class="logo__icon">
                 <use xlink:href="/website-makeup-feel-design/img/icons/logo.svg#ico"></use>
               </svg>
@@ -48,8 +48,14 @@
         </nav>
       </div>
     </div>
-    <main class="page-contacts"><img class="page-contacts__image-title" src="/website-makeup-feel-design/img/image-title-contacts-lg.png" alt="">
-      <section class="contacts"><img class="page-contacts__image" src="/website-makeup-feel-design/img/contacts-bg.png" alt="">
+    <main class="page-contacts">
+      <picture>
+        <source srcset="/website-makeup-feel-design/img/image-title-contacts-lg.webp" type="image/webp"><img class="page-contacts__image-title" src="/website-makeup-feel-design/img/image-title-contacts-lg.png" alt="" width="475px" height="80px">
+      </picture>
+      <section class="contacts">
+        <picture>
+          <source srcset="/website-makeup-feel-design/img/contacts-bg.webp" type="image/webp"><img class="page-contacts__image" src="/website-makeup-feel-design/img/contacts-bg.png" alt="" width="365px" height="285px">
+        </picture>
         <div class="container">
           <div class="contacts__inner">
             <h1 class="page-title page-contacts__title contacts__title">Написать мне</h1>
@@ -76,9 +82,9 @@
               <div class="contacts__link-group contacts__link-contact"><span>Телефон</span><span><a href="tel:+74957557983">+7 495 75 57 983</a></span></div>
               <div class="contacts__link-group contacts__link-contact"><span>Email:</span><span><a href="mailto:info@feeldaria.com">info@feeldaria.com</a></span></div>
               <ul class="contacts__link-group social-media social-media_horizontal social-media_filled">
-                <li><a class="icon-behance" href="#" target="_blank" rel="noopener"></a></li>
-                <li><a class="icon-facebook" href="#" target="_blank" rel="noopener"></a></li>
-                <li><a class="icon-instagram" href="#" target="_blank" rel="noopener"><span class="path1"></span><span class="path2"></span></a></li>
+                <li><a class="icon-behance" href="#" target="_blank" rel="noopener" aria-label="Go to behance"></a></li>
+                <li><a class="icon-facebook" href="#" target="_blank" rel="noopener" aria-label="Go to facebook"></a></li>
+                <li><a class="icon-instagram" href="#" target="_blank" rel="noopener" aria-label="Go to instagram"><span class="path1"></span><span class="path2"></span></a></li>
               </ul>
             </div>
           </div>
