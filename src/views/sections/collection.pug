@@ -94,7 +94,7 @@ section.collections
                             .collection__inner
                                 picture
                                     source( srcset=collection.previewWebp.replace('.png', '.webp'), type='image/webp' )
-                                    img.collection__image( src=collection.preview alt="" width="180px" height="120px" )
+                                    img.collection__image( src=collection.preview alt="" width="180px" height="120px" loading="lazy" )
 
                                 .collection__desc
                                     .collection__name #{collection.name}
@@ -120,7 +120,7 @@ section.collections
                                                   .swiper-slide.collection-modal__slider-slide
                                                     picture
                                                         source( srcset=slide.replace('.png', '.webp'), type='image/webp' )
-                                                        img( src=slide alt="" width="375px" height="190px" )
+                                                        img( src=slide alt="" width="375px" height="190px" loading="lazy" )
 
                                             .collection-modal__slider-arrows
                                                 .collection-modal__slider-arrow.slider__arrow.swiper-button-prev
